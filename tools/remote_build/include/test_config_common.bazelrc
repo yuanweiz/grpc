@@ -28,3 +28,4 @@ build --test_output=errors
 
 # Custom checks
 test --config=postmortem
+test --ignore_dev_dependency=false
