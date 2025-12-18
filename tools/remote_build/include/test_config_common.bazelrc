@@ -15,6 +15,9 @@
 
 # bazelrc for common configuration of gRPC tests
 
+common --enable_bzlmod=true
+common --enable_workspace=false
+
 build --verbose_failures=true
 
 # without verbose gRPC logs the test outputs are not very useful
