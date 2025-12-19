@@ -60,7 +60,7 @@ bazel_dep(name = "rules_shell", version = "0.4.0", dev_dependency = True)
 # Python dependencies
 # ===================
 
-bazel_dep(name = "rules_python", version = "1.6.0")
+bazel_dep(name = "rules_python", version = "1.5.4")
 
 PYTHON_VERSIONS = [
     "3.9",
@@ -68,8 +68,7 @@ PYTHON_VERSIONS = [
     "3.11",
     "3.12",
     "3.13",
-#    "3.14.0b2",
-    "3.14",
+    "3.14.0b2",
 ]
 
 python = use_extension("@rules_python//python/extensions:python.bzl", "python")
@@ -106,40 +105,3 @@ http_archive(
     strip_prefix = "typing_extensions-4.12.2",
     url = "https://github.com/python/typing_extensions/archive/4.12.2.tar.gz",
 )
-
-http_archive(
-    name = "bazel_toolchains",
-    integrity = "sha256-F57AL4Cehqv1Y1bYiYyL10Bp8b18VgRAUMLNPXnQ4CQ=",
-    strip_prefix = "bazel-toolchains-4.1.0",
-    urls = [
-        "https://mirror.bazel.build/github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz",
-        "https://github.com/bazelbuild/bazel-toolchains/releases/download/4.1.0/bazel-toolchains-4.1.0.tar.gz",
-    ],
-)
-
-http_archive(
-    name = "google_cloud_cpp",
-    sha256 = "81ea28cf9e5bb032d356b0187409f30b1035f8ea5b530675ea248c8a6c0070aa",
-    strip_prefix = "google-cloud-cpp-2.35.0",
-    urls = [
-        "https://storage.googleapis.com/grpc-bazel-mirror/github.com/googleapis/google-cloud-cpp/archive/refs/tags/v2.35.0.tar.gz",
-        "https://github.com/googleapis/google-cloud-cpp/archive/refs/tags/v2.35.0.tar.gz",
-    ],
-)
-
-exec_properties = use_extension("//bazel:extensions.bzl", "exec_properties")
-exec_properties.custom_exec_properties(
-    name = "grpc_custom_exec_properties",
-    constant = "LARGE_MACHINE",
-    rbe_exec_properties_dict = {"os": "ubuntu", "machine_size": "large"},
-)
-# call it again
-exec_properties.custom_exec_properties(
-    name = "grpc_custom_exec_properties",
-    constant = "SMALL_MACHINE",
-    rbe_exec_properties_dict = {"os": "ubuntu", "machine_size": "small"},
-)
-use_repo(exec_properties, "grpc_custom_exec_properties")
-
-always_fail = use_extension("//bazel:extensions.bzl", "always_fail")
-always_fail.fail(name="test_only")
