@@ -22,17 +22,18 @@ load(
     "create_rbe_exec_properties_dict",
     "custom_exec_properties",
 )
+
 def _always_fail(ctx):
-  fail("failed.")
+    fail("failed.")
 
 _fail_properties = tag_class(attrs = {
     "name": attr.string(),
 })
 
 def _exec_properties_impl(ctx):
-    debug_str = 'start of debug_str\n'
+    debug_str = "start of debug_str\n"
     for module in ctx.modules:
-        debug_str += ("module.name="+module.name+"\n")
+        debug_str += ("module.name=" + module.name + "\n")
         repositories = {}
         for cep in module.tags.custom_exec_properties:
             name = cep.name
