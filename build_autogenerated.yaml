@@ -5435,6 +5435,9 @@ targets:
   - test/core/iomgr/fd_conservation_posix_test.cc
   deps:
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -5447,6 +5450,9 @@ targets:
   - test/core/end2end/multiple_server_queues_test.cc
   deps:
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: pollset_windows_starvation_test
   build: test
   language: c
@@ -5455,6 +5461,9 @@ targets:
   - test/core/iomgr/pollset_windows_starvation_test.cc
   deps:
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -5659,6 +5668,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: address_sorting_test
   gtest: true
@@ -5671,6 +5683,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -5697,6 +5712,9 @@ targets:
   - grpc++_unsecure
   - grpc_test_util_unsecure
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -5846,6 +5864,9 @@ targets:
   - grpc++_reflection
   - grpcpp_channelz
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alarm_test
   gtest: true
   build: test
@@ -5857,6 +5878,9 @@ targets:
   - gtest
   - grpc++_unsecure
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6050,6 +6074,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: alloc_test
   gtest: true
@@ -6061,6 +6088,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: alpn_test
   gtest: true
@@ -6072,6 +6102,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_concurrent_connectivity_test
   gtest: true
   build: test
@@ -6092,6 +6125,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6107,6 +6143,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_crypt_test
   gtest: true
   build: test
@@ -6119,6 +6158,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_crypter_test
   gtest: true
   build: test
@@ -6131,6 +6173,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_frame_protector_test
   gtest: true
   build: test
@@ -6145,6 +6190,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_grpc_record_protocol_test
   gtest: true
   build: test
@@ -6157,6 +6205,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_handshaker_client_test
   gtest: true
   build: test
@@ -6178,6 +6229,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_iovec_record_protocol_test
   gtest: true
   build: test
@@ -6190,6 +6244,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_security_connector_test
   gtest: true
   build: test
@@ -6200,6 +6257,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_tsi_handshaker_test
   gtest: true
   build: test
@@ -6212,6 +6272,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_tsi_utils_test
   gtest: true
   build: test
@@ -6224,6 +6287,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_util_test
   gtest: true
   build: test
@@ -6235,6 +6301,9 @@ targets:
   - gtest
   - grpc++_alts
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: alts_zero_copy_grpc_protector_test
   gtest: true
   build: test
@@ -6247,6 +6316,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: arena_promise_test
   gtest: true
   build: test
@@ -6258,6 +6330,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: arena_test
   gtest: true
@@ -6269,6 +6344,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: async_end2end_test
   gtest: true
@@ -6290,6 +6368,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: auth_context_test
   gtest: true
   build: test
@@ -6300,6 +6381,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: auth_property_iterator_test
   gtest: true
@@ -6311,6 +6395,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: authorization_matchers_test
   gtest: true
@@ -6322,6 +6409,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: authorization_policy_provider_test
   gtest: true
   build: test
@@ -6335,6 +6425,9 @@ targets:
   - grpc++
   - grpc_authorization_provider
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: avl_test
   gtest: true
   build: test
@@ -6351,6 +6444,9 @@ targets:
   - gtest
   - absl/hash:hash
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: aws_request_signer_test
   gtest: true
@@ -6362,6 +6458,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: backend_metrics_lb_policy_test
   gtest: true
   build: test
@@ -6381,6 +6480,9 @@ targets:
   - grpc++
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: backoff_test
   gtest: true
   build: test
@@ -6391,6 +6493,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: bad_server_response_test
   gtest: true
@@ -6404,6 +6509,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: bad_ssl_alpn_test
   gtest: true
   build: test
@@ -6419,6 +6527,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6438,6 +6549,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6456,6 +6570,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: badreq_bad_client_test
   gtest: true
   build: test
@@ -6470,6 +6587,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: basic_work_queue_test
   gtest: true
   build: test
@@ -6480,6 +6600,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: bdp_estimator_test
   gtest: true
   build: test
@@ -6490,6 +6613,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6505,6 +6631,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: bin_encoder_test
   gtest: true
@@ -6516,6 +6645,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: bitset_test
   gtest: true
@@ -6532,6 +6664,9 @@ targets:
   - absl/base:core_headers
   - absl/log:check
   - absl/numeric:bits
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: blackboard_test
   gtest: true
@@ -6713,6 +6848,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: buffer_list_test
   gtest: true
@@ -6724,6 +6862,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: byte_buffer_test
   gtest: true
   build: test
@@ -6734,6 +6875,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: c_slice_buffer_test
   gtest: true
@@ -6745,6 +6889,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: call_arena_allocator_test
   gtest: true
@@ -6756,6 +6903,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -6779,6 +6929,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: call_creds_registry_test
   gtest: true
   build: test
@@ -6791,6 +6944,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: call_filters_test
   gtest: true
   build: test
@@ -7047,6 +7203,9 @@ targets:
   - absl/utility:utility
   - gpr
   - protobuf
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: call_finalization_test
   gtest: true
@@ -7059,6 +7218,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: call_state_test
   gtest: true
   build: test
@@ -7252,6 +7414,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: call_tracer_test
   gtest: true
@@ -7265,6 +7430,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: call_utils_test
   gtest: true
@@ -7916,6 +8084,9 @@ targets:
   - cares
   - gpr
   - address_sorting
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: cancel_ares_query_test
   gtest: true
   build: test
@@ -7933,6 +8104,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: cancel_callback_test
   gtest: true
   build: test
@@ -8151,6 +8325,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: cel_authorization_engine_test
   gtest: true
@@ -8440,6 +8617,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: certificate_provider_registry_test
   gtest: true
   build: test
@@ -8450,6 +8630,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: certificate_provider_store_test
   gtest: true
   build: test
@@ -8460,6 +8643,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: cf_engine_test
   gtest: true
@@ -8471,6 +8657,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -8497,6 +8686,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -8522,6 +8714,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channel_args_test
   gtest: true
   build: test
@@ -8532,6 +8727,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: channel_arguments_test
   gtest: true
@@ -8544,6 +8742,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: channel_creds_registry_test
   gtest: true
@@ -8555,6 +8756,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channel_init_test
   gtest: true
   build: test
@@ -8565,6 +8769,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: channel_stack_builder_test
   gtest: true
@@ -8576,6 +8783,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channel_stack_test
   gtest: true
   build: test
@@ -8586,6 +8796,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: channel_trace_test
   gtest: true
@@ -8601,6 +8814,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channelz_registry_test
   gtest: true
   build: test
@@ -8612,6 +8828,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: channelz_service_test
   gtest: true
@@ -8636,6 +8855,9 @@ targets:
   - gtest
   - grpcpp_channelz
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channelz_test
   gtest: true
   build: test
@@ -8667,6 +8889,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: channelz_tool_test
   gtest: true
   build: test
@@ -8798,6 +9023,9 @@ targets:
   - grpcpp_channelz
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -8825,6 +9053,9 @@ targets:
   - gtest
   - grpcpp_channelz
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: check_gcp_environment_linux_test
   gtest: true
   build: test
@@ -8835,6 +9066,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: check_gcp_environment_windows_test
   gtest: true
   build: test
@@ -8845,6 +9079,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: chttp2_server_listener_test
   gtest: true
   build: test
@@ -8857,6 +9094,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: chunked_vector_test
   gtest: true
   build: test
@@ -9075,6 +9315,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: cli_call_test
   gtest: true
@@ -9113,6 +9356,9 @@ targets:
   - absl/strings:charset
   - protoc
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: client_auth_filter_test
   gtest: true
   build: test
@@ -9131,6 +9377,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: client_authority_filter_test
   gtest: true
@@ -9150,6 +9399,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: client_callback_end2end_test
   gtest: true
@@ -9173,6 +9425,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: client_channel_service_config_test
   gtest: true
   build: test
@@ -9184,6 +9439,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: client_context_test_peer_test
   gtest: true
@@ -9195,6 +9453,9 @@ targets:
   deps:
   - grpc++_test
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: client_fork_test
   gtest: true
   build: test
@@ -9216,6 +9477,9 @@ targets:
   - grpc++
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9242,6 +9506,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: client_lb_end2end_test
   gtest: true
   build: test
@@ -9273,6 +9540,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9287,6 +9557,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9309,6 +9582,9 @@ targets:
   - gtest
   - grpcpp_channelz
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9323,6 +9599,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: codegen_test_full
   gtest: true
@@ -9335,6 +9614,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: codegen_test_minimal
   gtest: true
@@ -9347,6 +9629,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: combiner_test
   gtest: true
@@ -9359,6 +9644,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9378,6 +9666,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: completion_queue_threading_test
   gtest: true
@@ -9389,6 +9680,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: composite_credentials_test
   gtest: true
   build: test
@@ -9401,6 +9695,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: compression_test
   gtest: true
   build: test
@@ -9411,6 +9708,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: concurrent_connectivity_test
   gtest: true
@@ -9422,6 +9722,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: connection_context_test
   gtest: true
   build: test
@@ -9432,6 +9735,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: connection_prefix_bad_client_test
   gtest: true
@@ -9447,6 +9753,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: connection_refused_test
   gtest: true
   build: test
@@ -9459,6 +9768,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: connectivity_state_test
   gtest: true
   build: test
@@ -9469,6 +9781,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: context_allocator_end2end_test
   gtest: true
   build: test
@@ -9489,6 +9804,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: context_test
   gtest: true
   build: test
@@ -9665,6 +9983,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: core_configuration_test
   gtest: true
@@ -9676,6 +9997,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: cpp_impl_of_test
   gtest: true
@@ -9687,6 +10011,9 @@ targets:
   - test/core/util/cpp_impl_of_test.cc
   deps:
   - gtest
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: cpu_test
   gtest: true
@@ -9698,6 +10025,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: crl_provider_test
   gtest: true
@@ -9719,6 +10049,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: crl_ssl_transport_security_test
   gtest: true
   build: test
@@ -9731,6 +10064,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9746,6 +10082,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: delegating_channel_test
   gtest: true
@@ -9767,6 +10106,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: directory_reader_test
   gtest: true
   build: test
@@ -9777,6 +10119,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: dns_fork_test
   gtest: true
@@ -9791,6 +10136,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9805,6 +10153,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: dns_resolver_test
   gtest: true
   build: test
@@ -9815,6 +10166,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: down_cast_test
   gtest: true
   build: test
@@ -9826,6 +10180,9 @@ targets:
   deps:
   - gtest
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: dual_ref_counted_test
   gtest: true
@@ -9837,6 +10194,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: dualstack_socket_test
   gtest: true
   build: test
@@ -9849,6 +10209,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -9867,6 +10230,9 @@ targets:
   - absl/functional:any_invocable
   - absl/log:check
   - absl/strings:str_format
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: duplicate_header_bad_client_test
   gtest: true
@@ -9882,6 +10248,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_chaotic_good_no_logging_test
   gtest: true
   build: test
@@ -10007,6 +10376,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -10224,6 +10596,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -10353,6 +10728,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_http2_security_no_logging_test
   gtest: true
   build: test
@@ -10478,6 +10856,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_http2_security_test
   gtest: true
   build: test
@@ -10691,6 +11072,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_http2_test
   gtest: true
   build: test
@@ -10904,6 +11288,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_inproc_no_logging_test
   gtest: true
   build: test
@@ -11029,6 +11416,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_inproc_test
   gtest: true
   build: test
@@ -11242,6 +11632,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_ph2_no_logging_test
   gtest: true
   build: test
@@ -11367,6 +11760,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_ph2_test
   gtest: true
   build: test
@@ -11580,6 +11976,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_posix_no_logging_test
   gtest: true
   build: test
@@ -11705,6 +12104,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_posix_test
   gtest: true
   build: test
@@ -11918,6 +12320,9 @@ targets:
   - grpc_authorization_provider
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: end2end_test
   gtest: true
   build: test
@@ -11942,6 +12347,9 @@ targets:
   deps:
   - grpc++_test
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: endpoint_addresses_test
   gtest: true
   build: test
@@ -11952,6 +12360,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: endpoint_config_test
   gtest: true
@@ -12022,6 +12433,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: endpoint_pair_test
   gtest: true
@@ -12035,6 +12449,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: env_test
   gtest: true
   build: test
@@ -12045,6 +12462,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: error_details_test
   gtest: true
@@ -12063,6 +12483,9 @@ targets:
   - gtest
   - grpc++_error_details
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: error_test
   gtest: true
   build: test
@@ -12075,6 +12498,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: error_utils_test
   gtest: true
@@ -12086,6 +12512,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: errqueue_support_test
   gtest: true
   build: test
@@ -12096,6 +12525,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -12110,6 +12542,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: event_engine_wakeup_scheduler_test
   gtest: true
   build: test
@@ -12121,6 +12556,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: event_poller_posix_test
   gtest: true
@@ -12134,6 +12572,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -12148,6 +12589,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -12171,6 +12615,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: exec_ctx_wakeup_scheduler_test
   gtest: true
   build: test
@@ -12361,6 +12808,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: experiments_tag_test
   gtest: true
@@ -12379,6 +12829,9 @@ targets:
   - gtest
   - absl/status:statusor
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: experiments_test
   gtest: true
@@ -12396,6 +12849,9 @@ targets:
   deps:
   - gtest
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: factory_test
   gtest: true
@@ -12409,6 +12865,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: fake_resolver_test
   gtest: true
@@ -12420,6 +12879,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: fake_transport_security_test
   gtest: true
   build: test
@@ -12432,6 +12894,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: fd_posix_test
   gtest: true
   build: test
@@ -12442,6 +12907,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -12456,6 +12924,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -12471,6 +12942,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: filter_fusion_test
   gtest: true
@@ -13123,6 +13597,9 @@ targets:
   - cares
   - gpr
   - address_sorting
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: filter_test_test
   gtest: true
   build: test
@@ -13142,6 +13619,9 @@ targets:
   - grpc_unsecure
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: flaky_network_test
   gtest: true
@@ -13164,6 +13644,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: flow_control_manager_test
   gtest: true
   build: test
@@ -13394,6 +13877,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: flow_control_test
   gtest: true
   build: test
@@ -13623,6 +14109,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: for_each_test
   gtest: true
@@ -13851,6 +14340,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: fork_test
   gtest: true
@@ -13862,6 +14354,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -13882,6 +14377,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: frame_handler_test
   gtest: true
   build: test
@@ -13894,6 +14392,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: frame_test
   gtest: true
   build: test
@@ -14117,6 +14618,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: function_signature_test
   gtest: true
@@ -14129,6 +14633,9 @@ targets:
   - third_party/googletest/googlemock/src/gmock_main.cc
   deps:
   - gtest
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: fuzzing_event_engine_test
   gtest: true
   build: test
@@ -14154,6 +14661,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -14174,6 +14684,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: gcp_authentication_filter_test
   gtest: true
   build: test
@@ -14192,6 +14705,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: generic_end2end_test
   gtest: true
@@ -14212,6 +14728,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: glob_test
   gtest: true
   build: test
@@ -14222,6 +14741,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: goaway_server_test
   gtest: true
@@ -14236,6 +14758,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: google_c2p_resolver_test
   gtest: true
   build: test
@@ -14248,6 +14773,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: google_default_call_credentials_test
   gtest: true
   build: test
@@ -14260,6 +14788,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: gpr_time_test
   gtest: true
   build: test
@@ -14270,6 +14801,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: graceful_shutdown_test
   gtest: true
@@ -14283,6 +14817,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_alts_credentials_options_test
   gtest: true
   build: test
@@ -14293,6 +14830,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_audit_logging_test
   gtest: true
   build: test
@@ -14303,6 +14843,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_authorization_engine_test
   gtest: true
   build: test
@@ -14315,6 +14858,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_authorization_policy_provider_test
   gtest: true
   build: test
@@ -14326,6 +14872,9 @@ targets:
   - gtest
   - grpc_authorization_provider
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_authz_end2end_test
   gtest: true
   build: test
@@ -14350,6 +14899,9 @@ targets:
   - gtest
   - grpc_authorization_provider
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_byte_buffer_reader_test
   gtest: true
   build: test
@@ -14360,6 +14912,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: grpc_cli
   build: test
@@ -14400,6 +14955,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_cpp_plugin
   build: protoc
   language: c++
@@ -14426,6 +14984,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_node_plugin
   build: protoc
   language: c++
@@ -14487,6 +15048,9 @@ targets:
   - grpc++
   - opentelemetry-cpp::api
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_certificate_distributor_test
   gtest: true
   build: test
@@ -14497,6 +15061,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_certificate_provider_test
   gtest: true
   build: test
@@ -14507,6 +15074,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_certificate_verifier_test
   gtest: true
   build: test
@@ -14517,6 +15087,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_credentials_options_comparator_test
   gtest: true
   build: test
@@ -14527,6 +15100,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_credentials_options_test
   gtest: true
   build: test
@@ -14537,6 +15113,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tls_crl_provider_test
   gtest: true
   build: test
@@ -14556,6 +15135,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpc_tool_test
   gtest: true
   build: test
@@ -14594,6 +15176,9 @@ targets:
   - protoc
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -14618,6 +15203,9 @@ targets:
   - grpc++
   - opentelemetry-cpp::api
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpclb_api_test
   gtest: true
   build: test
@@ -14629,6 +15217,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: grpclb_end2end_test
   gtest: true
   build: test
@@ -14656,6 +15247,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -14773,6 +15367,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: h2_ssl_session_reuse_test
   gtest: true
   build: test
@@ -14785,6 +15382,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: h2_tls_peer_property_external_verifier_test
   gtest: true
   build: test
@@ -14797,6 +15397,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: handle_tests
   gtest: true
   build: test
@@ -14807,6 +15410,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: handshake_server_with_readahead_handshaker_test
   gtest: true
@@ -14820,6 +15426,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -14838,6 +15447,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: header_assembler_test
   gtest: true
   build: test
@@ -14849,6 +15461,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: headers_bad_client_test
   gtest: true
   build: test
@@ -14863,6 +15478,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: health_service_end2end_test
   gtest: true
   build: test
@@ -14887,6 +15505,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: histogram_test
   gtest: true
   build: test
@@ -14897,6 +15518,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: host_port_test
   gtest: true
@@ -14908,6 +15532,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: hpack_encoder_test
   gtest: true
@@ -14919,6 +15546,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: hpack_parser_table_test
   gtest: true
@@ -14930,6 +15560,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: hpack_parser_test
   gtest: true
@@ -14941,6 +15574,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: http2_client
   build: test
@@ -14978,6 +15614,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: http2_security_frame_test
   gtest: true
@@ -15000,6 +15639,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: http2_server_transport_test
   gtest: true
@@ -15023,6 +15665,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -15038,6 +15683,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: http2_status_test
   gtest: true
   build: test
@@ -15262,6 +15910,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: http2_transport_test
   gtest: true
   build: test
@@ -15284,6 +15935,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: http_proxy_mapper_test
   gtest: true
@@ -15296,6 +15950,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: httpcli_test
   gtest: true
@@ -15311,6 +15968,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -15329,6 +15989,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -15354,6 +16017,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: idle_filter_state_test
   gtest: true
   build: test
@@ -15367,6 +16033,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: if_list_test
   gtest: true
@@ -15380,6 +16049,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: if_test
   gtest: true
@@ -15565,6 +16237,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: incoming_metadata_tracker_test
   gtest: true
@@ -16225,6 +16900,9 @@ targets:
   - cares
   - gpr
   - address_sorting
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: info_tool_test
   gtest: true
   build: test
@@ -16882,6 +17560,9 @@ targets:
   - cares
   - gpr
   - address_sorting
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -16896,6 +17577,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: initial_settings_frame_bad_client_test
   gtest: true
@@ -16911,6 +17595,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: insecure_credentials_test
   gtest: true
   build: test
@@ -16921,6 +17608,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: insecure_security_connector_test
   gtest: true
   build: test
@@ -16931,6 +17621,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: instrument_test
   gtest: true
   build: test
@@ -16942,6 +17635,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: inter_activity_latch_test
   gtest: true
@@ -16954,6 +17650,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: inter_activity_mutex_test
   gtest: true
@@ -16967,6 +17666,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: inter_activity_pipe_test
   gtest: true
   build: test
@@ -17162,6 +17864,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: interception_chain_test
   gtest: true
@@ -17174,6 +17879,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: interceptor_list_test
   gtest: true
@@ -17394,6 +18102,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: interop_client
   build: test
@@ -17446,6 +18157,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: iocp_test
   gtest: true
   build: test
@@ -17458,6 +18172,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -17478,6 +18195,9 @@ targets:
   - grpc++
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: join_test
   gtest: true
   build: test
@@ -17667,6 +18387,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: json_object_loader_test
   gtest: true
@@ -17678,6 +18401,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: json_test
   gtest: true
@@ -17689,6 +18415,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: json_token_test
   gtest: true
@@ -17700,6 +18429,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: jwt_util_test
   gtest: true
@@ -17711,6 +18443,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: jwt_verifier_test
   gtest: true
@@ -17722,6 +18457,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: lame_client_test
   gtest: true
@@ -17735,6 +18473,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: latch_test
   gtest: true
   build: test
@@ -17933,6 +18674,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: latent_see_service_test
   gtest: true
@@ -17965,6 +18709,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: latent_see_test
   gtest: true
   build: test
@@ -18191,6 +18938,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: latent_see_tool_test
   gtest: true
@@ -18321,6 +19071,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -18344,6 +19097,9 @@ targets:
   - gtest
   - absl/status:statusor
   - protobuf
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: lb_get_cpu_stats_test
   gtest: true
   build: test
@@ -18359,6 +19115,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: lb_load_data_store_test
   gtest: true
   build: test
@@ -18373,6 +19132,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: lb_metadata_test
   gtest: true
   build: test
@@ -18383,6 +19145,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: load_config_test
   gtest: true
@@ -18394,6 +19159,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: load_file_test
   gtest: true
@@ -18405,6 +19173,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: local_security_connector_test
   gtest: true
@@ -18416,6 +19187,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: lock_based_mpsc_test
   gtest: true
   build: test
@@ -18611,6 +19385,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: log_too_many_open_files_test
   gtest: true
   build: test
@@ -18621,6 +19398,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -18820,6 +19600,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: lru_cache_test
   gtest: true
@@ -18997,6 +19780,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: map_pipe_test
   gtest: true
@@ -19225,6 +20011,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: match_promise_test
   gtest: true
@@ -19413,6 +20202,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: match_test
   gtest: true
@@ -19427,6 +20219,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: matchers_test
   gtest: true
@@ -19438,6 +20233,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: memory_quota_stress_test
   gtest: true
   build: test
@@ -19448,6 +20246,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -19463,6 +20264,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: memory_usage_test
   gtest: true
@@ -19499,6 +20303,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: message_allocator_end2end_test
   gtest: true
   build: test
@@ -19519,6 +20326,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: message_assembler_test
   gtest: true
   build: test
@@ -19530,6 +20340,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: message_compress_test
   gtest: true
   build: test
@@ -19540,6 +20353,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: message_size_service_config_test
   gtest: true
@@ -19551,6 +20367,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: metadata_map_test
   gtest: true
   build: test
@@ -19561,6 +20380,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: metrics_test
   gtest: true
   build: test
@@ -19573,6 +20395,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: minimal_stack_is_minimal_test
   gtest: true
@@ -19584,6 +20409,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: miscompile_with_no_unique_address_test
   gtest: true
@@ -19596,6 +20424,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: mock_stream_test
   gtest: true
@@ -19615,6 +20446,9 @@ targets:
   deps:
   - grpc++_test
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: mock_test
   gtest: true
   build: test
@@ -19634,6 +20468,9 @@ targets:
   deps:
   - grpc++_test
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: mpscq_test
   gtest: true
   build: test
@@ -19644,6 +20481,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -19662,6 +20502,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: no_server_test
   gtest: true
@@ -19675,6 +20518,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: nonblocking_test
   gtest: true
   build: test
@@ -19693,6 +20539,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: notification_test
   gtest: true
   build: test
@@ -19704,6 +20553,9 @@ targets:
   deps:
   - gtest
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: num_external_connectivity_watchers_test
   gtest: true
@@ -19715,6 +20567,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: observable_test
   gtest: true
   build: test
@@ -19912,6 +20767,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: oracle_event_engine_posix_test
   gtest: true
@@ -19933,6 +20791,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -19955,6 +20816,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: orca_service_test
   gtest: true
   build: test
@@ -19967,6 +20831,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: orphanable_test
   gtest: true
   build: test
@@ -19977,6 +20844,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: osa_distance_test
   gtest: true
   build: test
@@ -19988,6 +20858,9 @@ targets:
   - test/core/test_util/osa_distance_test.cc
   deps:
   - gtest
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: otel_npc_metrics_test
   gtest: true
   build: plugin_test
@@ -20023,6 +20896,9 @@ targets:
   - opentelemetry-cpp::api
   - opentelemetry-cpp::metrics
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: otel_plugin_option_test
   gtest: true
   build: plugin_test
@@ -20058,6 +20934,9 @@ targets:
   - opentelemetry-cpp::api
   - opentelemetry-cpp::metrics
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: otel_plugin_test
   gtest: true
   build: plugin_test
@@ -20095,6 +20974,9 @@ targets:
   - opentelemetry-cpp::api
   - opentelemetry-cpp::metrics
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: otel_tracing_test
   gtest: true
   build: plugin_test
@@ -20134,6 +21016,9 @@ targets:
   - opentelemetry-cpp::metrics
   - opentelemetry-cpp::trace
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: out_of_bounds_bad_client_test
   gtest: true
   build: test
@@ -20148,6 +21033,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: outlier_detection_lb_config_parser_test
   gtest: true
   build: test
@@ -20159,6 +21047,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: outlier_detection_test
   gtest: true
@@ -20177,6 +21068,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: overload_test
   gtest: true
@@ -20190,6 +21084,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: parse_address_test
   gtest: true
@@ -20201,6 +21098,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: parse_address_with_named_scope_id_test
   gtest: true
   build: test
@@ -20211,6 +21111,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20226,6 +21129,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: parser_test
   gtest: true
   build: test
@@ -20241,6 +21147,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: party_mpsc_test
   gtest: true
@@ -20253,6 +21162,9 @@ targets:
   deps:
   - gtest
   - grpc_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20268,6 +21180,9 @@ targets:
   deps:
   - gtest
   - grpc_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: percent_encoding_test
   gtest: true
@@ -20279,6 +21194,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: periodic_update_test
   gtest: true
@@ -20387,6 +21305,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: pick_first_test
   gtest: true
@@ -20408,6 +21329,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ping_abuse_policy_test
   gtest: true
@@ -20419,6 +21343,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ping_callbacks_test
   gtest: true
@@ -20431,6 +21358,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ping_configuration_test
   gtest: true
@@ -20442,6 +21372,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ping_rate_policy_test
   gtest: true
@@ -20453,6 +21386,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: pipe_test
   gtest: true
@@ -20466,6 +21402,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: poll_test
   gtest: true
@@ -20643,6 +21582,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: poller_fork_test
   gtest: true
@@ -20659,6 +21601,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20683,6 +21628,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: posix_endpoint_test
   gtest: true
   build: test
@@ -20701,6 +21649,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20715,6 +21666,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20735,6 +21689,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20762,6 +21719,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20796,6 +21756,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20809,6 +21772,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -20971,6 +21937,9 @@ targets:
   - grpcpp_channelz
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: prioritized_race_test
   gtest: true
   build: test
@@ -21154,6 +22123,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: promise_endpoint_test
   gtest: true
@@ -21167,6 +22139,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: promise_factory_test
   gtest: true
   build: test
@@ -21350,6 +22325,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: promise_map_test
   gtest: true
@@ -21536,6 +22514,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: promise_mutex_test
   gtest: true
@@ -21735,6 +22716,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: promise_test
   gtest: true
   build: test
@@ -21918,6 +22902,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: property_list_test
   gtest: true
@@ -21974,6 +22961,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: proto_buffer_reader_test
   gtest: true
   build: test
@@ -21984,6 +22974,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: proto_buffer_writer_test
   gtest: true
@@ -21995,6 +22988,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: proto_server_reflection_test
   gtest: true
@@ -22020,6 +23016,9 @@ targets:
   - gtest
   - grpc++_reflection
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: proto_utils_test
   gtest: true
   build: test
@@ -22031,6 +23030,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: qps_json_driver
   build: test
@@ -22464,6 +23466,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: race_test
   gtest: true
@@ -22645,6 +23650,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: random_early_detection_test
   gtest: true
@@ -22662,6 +23670,9 @@ targets:
   - absl/random:bit_gen_ref
   - absl/random:distributions
   - absl/random:random
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: raw_end2end_test
   gtest: true
@@ -22684,6 +23695,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: rbac_service_config_parser_test
   gtest: true
   build: test
@@ -22694,6 +23708,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: rbac_translator_test
   gtest: true
@@ -22706,6 +23723,9 @@ targets:
   - gtest
   - grpc_authorization_provider
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: ref_counted_ptr_test
   gtest: true
   build: test
@@ -22716,6 +23736,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: ref_counted_test
   gtest: true
   build: test
@@ -22726,6 +23749,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: remove_stream_from_stalled_lists_test
   gtest: true
   build: test
@@ -22736,6 +23762,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23008,6 +24037,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: resolve_address_using_ares_resolver_posix_test
   gtest: true
   build: test
@@ -23019,6 +24051,8 @@ targets:
   - gtest
   - grpc_test_util
   args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   - --resolver=ares
   platforms:
   - linux
@@ -23037,6 +24071,9 @@ targets:
   - gtest
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: resolve_address_using_native_resolver_posix_test
   gtest: true
   build: test
@@ -23048,6 +24085,8 @@ targets:
   - gtest
   - grpc_test_util
   args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   - --resolver=native
   platforms:
   - linux
@@ -23066,6 +24105,9 @@ targets:
   - gtest
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: resource_quota_end2end_stress_test
   gtest: true
   build: test
@@ -23084,6 +24126,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: resource_quota_test
   gtest: true
   build: test
@@ -23094,6 +24139,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: resource_tracker_test
   gtest: true
@@ -23110,6 +24158,9 @@ targets:
   - absl/base:config
   - absl/base:core_headers
   - absl/status:statusor
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: retry_service_config_test
   gtest: true
   build: test
@@ -23120,6 +24171,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: retry_throttle_test
   gtest: true
@@ -23131,6 +24185,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ring_buffer_test
   gtest: true
@@ -23144,6 +24201,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ring_hash_test
   gtest: true
@@ -23163,6 +24223,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: rls_end2end_test
   gtest: true
@@ -23199,6 +24262,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: rls_lb_config_parser_test
   gtest: true
   build: test
@@ -23209,6 +24275,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: round_robin_test
   gtest: true
@@ -23227,6 +24296,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: secure_auth_context_test
   gtest: true
@@ -23238,6 +24310,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: secure_channel_create_test
   gtest: true
   build: test
@@ -23248,6 +24323,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: secure_endpoint_test
   gtest: true
   build: test
@@ -23261,6 +24339,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: security_connector_test
   gtest: true
   build: test
@@ -23271,6 +24352,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: seq_test
   gtest: true
   build: test
@@ -23458,6 +24542,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: sequential_connectivity_test
   gtest: true
@@ -23469,6 +24556,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_builder_plugin_test
   gtest: true
   build: test
@@ -23490,6 +24580,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_builder_test
   gtest: true
   build: test
@@ -23512,6 +24605,9 @@ targets:
   - grpc++
   - grpc++_unsecure
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23536,6 +24632,9 @@ targets:
   - grpc++
   - grpc++_unsecure
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23550,6 +24649,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: server_chttp2_test
   gtest: true
@@ -23561,6 +24663,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_config_selector_test
   gtest: true
   build: test
@@ -23571,6 +24676,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: server_context_test_spouse_test
   gtest: true
@@ -23582,6 +24690,9 @@ targets:
   deps:
   - grpc++_test
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_early_return_test
   gtest: true
   build: test
@@ -23600,6 +24711,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_interceptors_end2end_test
   gtest: true
   build: test
@@ -23622,6 +24736,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_registered_method_bad_client_test
   gtest: true
   build: test
@@ -23636,6 +24753,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: server_request_call_test
   gtest: true
   build: test
@@ -23655,6 +24775,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23671,6 +24794,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23685,6 +24811,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: service_config_end2end_test
   gtest: true
   build: test
@@ -23706,6 +24835,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: service_config_test
   gtest: true
   build: test
@@ -23716,6 +24848,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: settings_timeout_manager_test
   gtest: true
   build: test
@@ -23738,6 +24873,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: settings_timeout_test
   gtest: true
@@ -23749,6 +24887,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: shared_bit_gen_test
   gtest: true
   build: test
@@ -23762,6 +24903,9 @@ targets:
   - gtest
   - absl/random:distributions
   - absl/random:random
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: shutdown_test
   gtest: true
@@ -23782,6 +24926,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: simple_request_bad_client_test
   gtest: true
   build: test
@@ -23796,6 +24943,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: single_set_ptr_test
   gtest: true
   build: test
@@ -23813,6 +24963,9 @@ targets:
   - gtest
   - absl/hash:hash
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: sleep_test
   gtest: true
@@ -23826,6 +24979,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: slice_string_helpers_test
   gtest: true
@@ -23852,6 +25008,9 @@ targets:
   - absl/container:flat_hash_map
   - absl/hash:hash
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: sockaddr_resolver_test
   gtest: true
@@ -23863,6 +25022,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: sockaddr_utils_test
   gtest: true
   build: test
@@ -23873,6 +25035,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: socket_utils_test
   gtest: true
   build: test
@@ -23883,6 +25048,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23900,6 +25068,9 @@ targets:
   - gtest
   - absl/base:config
   - absl/base:core_headers
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: spiffe_bundle_map_end2end_test
   gtest: true
@@ -23921,6 +25092,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: spiffe_ssl_transport_security_test
   gtest: true
   build: test
@@ -23933,6 +25107,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23947,6 +25124,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: spinlock_test
   gtest: true
   build: test
@@ -23957,6 +25137,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: ssl_transport_security_test
   gtest: true
@@ -23970,6 +25153,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -23986,6 +25172,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24000,6 +25189,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24015,6 +25207,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: static_stride_scheduler_test
   gtest: true
@@ -24193,6 +25388,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: status_conversion_test
   gtest: true
@@ -24204,6 +25402,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: status_flag_test
   gtest: true
@@ -24382,6 +25583,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: status_helper_test
   gtest: true
@@ -24393,6 +25597,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: status_util_test
   gtest: true
@@ -24404,6 +25611,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: stream_data_queue_test
   gtest: true
@@ -24423,6 +25633,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: stream_leak_with_queued_flow_control_update_test
   gtest: true
   build: test
@@ -24433,6 +25646,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: stream_quota_test
   gtest: true
   build: test
@@ -24460,6 +25676,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: streaming_throughput_test
   gtest: true
@@ -24480,6 +25699,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24496,6 +25718,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: string_ref_test
   gtest: true
   build: test
@@ -24507,6 +25732,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: string_test
   gtest: true
@@ -24518,6 +25746,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: subchannel_args_test
   gtest: true
@@ -24529,6 +25760,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: switch_test
   gtest: true
@@ -24716,6 +25950,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: sync_test
   gtest: true
@@ -24727,6 +25964,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: system_roots_test
   gtest: true
@@ -24738,6 +25978,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: table_test
   gtest: true
   build: test
@@ -24756,6 +25999,9 @@ targets:
   - absl/meta:type_traits
   - absl/numeric:bits
   - absl/utility:utility
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: tcp_client_posix_test
   gtest: true
@@ -24767,6 +26013,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24781,6 +26030,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24798,6 +26050,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24811,6 +26066,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -24825,6 +26083,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: tdigest_test
   gtest: true
@@ -25004,6 +26265,9 @@ targets:
   - absl/utility:utility
   - benchmark
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   benchmark: true
   defaults: benchmark
   uses_polling: false
@@ -25017,6 +26281,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_core_credentials_transport_tls_tls_credentials_test
   gtest: true
   build: test
@@ -25027,6 +26294,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_core_event_engine_posix_timer_heap_test
   gtest: true
   build: test
@@ -25208,6 +26478,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_core_event_engine_slice_buffer_test
   gtest: true
@@ -25393,6 +26666,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_core_iomgr_timer_heap_test
   gtest: true
@@ -25404,6 +26680,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_core_slice_slice_buffer_test
   gtest: true
@@ -25415,6 +26694,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_core_slice_slice_test
   gtest: true
@@ -25428,6 +26710,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_core_util_time_test
   gtest: true
@@ -25444,6 +26729,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_cpp_client_credentials_test
   gtest: true
@@ -25458,6 +26746,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_cpp_end2end_ssl_credentials_test
   gtest: true
   build: test
@@ -25479,6 +26770,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_cpp_end2end_tls_credentials_test
   gtest: true
   build: test
@@ -25499,6 +26793,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_cpp_server_credentials_test
   gtest: true
   build: test
@@ -25512,6 +26809,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: test_cpp_util_slice_test
   gtest: true
   build: test
@@ -25522,6 +26822,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: test_cpp_util_time_test
   gtest: true
@@ -25534,6 +26837,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: thd_test
   gtest: true
@@ -25545,6 +26851,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: thread_manager_test
   gtest: true
@@ -25557,6 +26866,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: thread_pool_test
   gtest: true
   build: test
@@ -25568,6 +26880,9 @@ targets:
   - gtest
   - grpc
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: thread_quota_test
   gtest: true
@@ -25746,6 +27061,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: thread_stress_test
   gtest: true
@@ -25766,6 +27084,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -25793,6 +27114,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -25809,6 +27133,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -25823,6 +27150,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: timeout_encoding_test
   gtest: true
@@ -25834,6 +27164,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: timer_list_test
   gtest: true
@@ -25856,6 +27189,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: timer_manager_test
   gtest: true
@@ -25867,6 +27203,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: timer_test
   gtest: true
@@ -25880,6 +27219,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: tls_certificate_verifier_test
   gtest: true
   build: test
@@ -25893,6 +27235,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: tls_key_export_test
   gtest: true
   build: test
@@ -25911,6 +27256,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: tls_security_connector_test
   gtest: true
   build: test
@@ -25923,6 +27271,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: too_many_pings_test
   gtest: true
   build: test
@@ -25937,6 +27288,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: tool_test_test
   gtest: true
   build: test
@@ -26592,6 +27946,9 @@ targets:
   - cares
   - gpr
   - address_sorting
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -26606,6 +27963,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: traced_buffer_list_test
   gtest: true
@@ -26617,6 +27977,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -26632,6 +27995,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: transport_security_test
   gtest: true
   build: test
@@ -26642,6 +28008,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: trie_lookup_test
   gtest: true
   build: test
@@ -26653,6 +28022,9 @@ targets:
   deps:
   - gtest
   - absl/container:flat_hash_map
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: try_join_test
   gtest: true
   build: test
@@ -26840,6 +28212,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: try_seq_metadata_test
   gtest: true
@@ -26851,6 +28226,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: try_seq_test
   gtest: true
@@ -27042,6 +28420,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: unique_ptr_with_bitset_test
   gtest: true
@@ -27219,6 +28600,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: unique_type_name_test
   gtest: true
@@ -27237,6 +28621,9 @@ targets:
   - absl/log:check
   - absl/numeric:bits
   - absl/strings:str_format
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: unknown_frame_bad_client_test
   gtest: true
@@ -27252,6 +28639,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: uri_test
   gtest: true
   build: test
@@ -27262,6 +28652,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util_unsecure
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: useful_test
   gtest: true
   build: test
@@ -27276,6 +28669,9 @@ targets:
   - absl/base:core_headers
   - absl/log:check
   - absl/numeric:bits
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: uuid_v4_test
   gtest: true
@@ -27287,6 +28683,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: validation_errors_test
   gtest: true
@@ -27298,6 +28697,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: varint_test
   gtest: true
@@ -27309,6 +28711,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: wait_for_callback_test
   gtest: true
@@ -27502,6 +28907,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: wait_for_single_owner_test
   gtest: true
@@ -27513,6 +28921,9 @@ targets:
   deps:
   - gtest
   - grpc
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: wakeup_fd_posix_test
   gtest: true
@@ -27524,6 +28935,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -27540,6 +28954,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: weighted_round_robin_test
   gtest: true
@@ -27560,6 +28977,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: win_socket_test
   gtest: true
@@ -27573,6 +28993,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -27592,6 +29015,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: windows_endpoint_test
   gtest: true
   build: test
@@ -27604,6 +29030,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -27622,6 +29051,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -27644,6 +29076,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: write_size_policy_test
   gtest: true
   build: test
@@ -27821,6 +29256,9 @@ targets:
   - absl/types:span
   - absl/utility:utility
   - gpr
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: writes_per_rpc_test
   gtest: true
@@ -27846,6 +29284,9 @@ targets:
   - gtest
   - grpc++
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -27964,6 +29405,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_bootstrap_test
   gtest: true
@@ -27976,6 +29420,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_certificate_provider_test
   gtest: true
@@ -27988,6 +29435,9 @@ targets:
   - gtest
   - absl/functional:overload
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_client_test
   gtest: true
@@ -28149,6 +29599,9 @@ targets:
   - absl/strings:internal
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_cluster_end2end_test
   gtest: true
@@ -28298,6 +29751,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -28439,6 +29895,9 @@ targets:
   - absl/strings:internal
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_cluster_type_end2end_test
   gtest: true
@@ -28587,6 +30046,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -28923,6 +30385,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_core_end2end_test
   gtest: true
@@ -29070,6 +30535,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -29094,6 +30562,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: xds_credentials_test
   gtest: true
   build: test
@@ -29104,6 +30575,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: xds_csds_end2end_test
   gtest: true
   build: test
@@ -29271,6 +30745,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -29419,6 +30896,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -29511,6 +30991,9 @@ targets:
   - absl/strings:internal
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_fallback_end2end_test
   gtest: true
@@ -29655,6 +31138,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -29804,6 +31290,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -29951,6 +31440,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -30101,6 +31593,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -30240,6 +31735,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_lb_policy_registry_test
   gtest: true
@@ -30354,6 +31852,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_listener_resource_type_test
   gtest: true
@@ -30496,6 +31997,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_matcher_parse_test
   gtest: true
@@ -30703,6 +32207,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_matcher_test
   gtest: true
@@ -30714,6 +32221,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_metadata_test
   gtest: true
@@ -30792,6 +32302,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_outlier_detection_end2end_test
   gtest: true
@@ -30938,6 +32451,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31087,6 +32603,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31101,6 +32620,9 @@ targets:
   deps:
   - gtest
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_override_host_test
   gtest: true
@@ -31119,6 +32641,9 @@ targets:
   - gtest
   - protobuf
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_pick_first_end2end_test
   gtest: true
@@ -31267,6 +32792,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31418,6 +32946,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31569,6 +33100,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31690,6 +33224,9 @@ targets:
   - grpc++
   - protoc
   - grpc_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   uses_polling: false
 - name: xds_routing_end2end_test
   gtest: true
@@ -31837,6 +33374,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -31994,6 +33534,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -32150,6 +33693,9 @@ targets:
   - gtest
   - grpc++_test_config
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -32307,6 +33853,9 @@ targets:
   - grpcpp_channelz
   - grpc_test_util
   - grpc++_test_config
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
 - name: xds_wrr_end2end_test
   gtest: true
   build: test
@@ -32454,6 +34003,9 @@ targets:
   deps:
   - gtest
   - grpc++_test_util
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
@@ -32472,6 +34024,9 @@ targets:
   deps:
   - gtest
   - grpc++
+  args:
+  - --bazel_repo_name=com_github_grpc_grpc
+  - --undefok=bazel_repo_name
   platforms:
   - linux
   - posix
