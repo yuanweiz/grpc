@@ -532,8 +532,8 @@ grpc_cc_test(
 )
 
 grpc_cc_library(
-    testonly = 1,
     name = "get_grpc_test_runfile_dir",
+    testonly = 1,
     srcs = [
         "get_grpc_test_runfile_dir.cc",
     ],
