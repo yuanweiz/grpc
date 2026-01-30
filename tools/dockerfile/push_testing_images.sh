@@ -60,11 +60,12 @@ ARTIFACT_REGISTRY_PREFIX=us-docker.pkg.dev/grpc-testing/testing-images-public
 
 # all dockerfile definitions we use for testing and for which we push an image to the registry
 ALL_DOCKERFILE_DIRS=(
-  tools/dockerfile/test/*
-  tools/dockerfile/grpc_artifact_*
-  tools/dockerfile/interoptest/*
-  tools/dockerfile/distribtest/*
-  third_party/rake-compiler-dock/*
+  #tools/dockerfile/test/*
+  tools/dockerfile/grpc_artifact_python_manylinux2014_aarch64
+  #tools/dockerfile/
+  #tools/dockerfile/interoptest/*
+  #tools/dockerfile/distribtest/*
+  #third_party/rake-compiler-dock/*
 )
 
 # These Docker directories contain obsolete images that cannot be built.
@@ -238,7 +239,7 @@ do
   # - one to exclude it from the GCP Vulnerability Scanner
   docker_exit_code=0
   docker build \
-    ${ALWAYS_BUILD:+--no-cache --pull} \
+    --nocache \ ##${ALWAYS_BUILD:+--no-cache --pull}
     -t ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} \
     -t ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:infrastructure-public-image-${DOCKER_IMAGE_TAG} \
     ${DOCKERFILE_DIR} || docker_exit_code=$?
@@ -259,8 +260,8 @@ do
 
   if [ "${SKIP_UPLOAD}" == "" ] && [ "${LOCAL_ONLY_MODE}" == "" ]
   then
-    docker push ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
-    docker push ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:infrastructure-public-image-${DOCKER_IMAGE_TAG}
+    # docker push ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG}
+    # docker push ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:infrastructure-public-image-${DOCKER_IMAGE_TAG}
 
     # After successful push, the image's RepoDigest info will become available in "docker image inspect",
     # so we update the .current_version file with the repo digest.
