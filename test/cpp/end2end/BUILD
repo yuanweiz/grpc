@@ -574,6 +574,7 @@ grpc_cc_test(
     ],
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
     ],
     deps = [
         ":end2end_test_utils",
@@ -824,6 +825,7 @@ grpc_cc_test(
     flaky = True,  # TODO(b/151315347)
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
         "cpp_lb_end2end_test",
         # b/117575949.
         "grpc:no-internal-poller",
@@ -1004,6 +1006,7 @@ grpc_cc_test(
     shard_count = 20,
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
         "cpp_lb_end2end_test",
         "no_windows",
     ],  # TODO(jtattermusch): fix test on windows
@@ -1055,6 +1058,7 @@ grpc_cc_test(
     ],
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
         # b/117623310.
         "grpc:no-internal-poller",
     ],
@@ -1198,6 +1202,7 @@ grpc_cc_test(
     ],
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
         # TODO(b/264692543): Re-enable after fixing
         "grpc:broken-internally",
         "no_test_ios",
@@ -1285,6 +1290,7 @@ grpc_cc_test(
     ],
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
         "no_windows",
     ],
     deps = [
@@ -1551,6 +1557,7 @@ grpc_cc_test(
     ],
     tags = [
         "cpp_end2end_test",
+        "cpp_end2end_test_client_ph2",
     ],
     deps = [
         ":end2end_test_utils",
