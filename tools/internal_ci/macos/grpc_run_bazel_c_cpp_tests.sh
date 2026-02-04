@@ -42,8 +42,6 @@ BAZEL_REMOTE_CACHE_ARGS=(
 
 python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path bazel_c_cpp_tests
 
-echo "============SLEEP==========="
-sleep 9999
 # run all C/C++ tests
 bazel_c_cpp_tests/bazel_wrapper \
   --output_base=.bazel_rbe \
