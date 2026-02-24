@@ -43,7 +43,8 @@ py_binary(
     name = "client",
     srcs = ["client.py"],
     python_version = "PY3",
-    deps = [":client_lib"],
+    #deps = [":client_lib"],
+    deps = [requirement("gevent")],
 )
 
 py_library(
