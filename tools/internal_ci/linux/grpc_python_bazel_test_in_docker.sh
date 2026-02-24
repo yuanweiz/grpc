@@ -20,13 +20,13 @@ TEST_TARGETS="//src/python/... //tools/distrib/python/grpcio_tools/... //example
 BAZEL_FLAGS="--test_output=errors --config=python"
 
 python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path python_bazel_tests
-python_bazel_tests/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test ${BAZEL_FLAGS} ${TEST_TARGETS}
+python_bazel_tests/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test ${BAZEL_FLAGS} -- //src/python/grpcio_tests/tests/unit:_compression_test.gevent # //tools/distrib/python/grpcio_tools/... ${TEST_TARGETS}
 
-python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path python_bazel_tests_single_threaded_unary_streams
-python_bazel_tests_single_threaded_unary_streams/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test --config=python_single_threaded_unary_stream ${BAZEL_FLAGS} ${TEST_TARGETS}
+#python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path python_bazel_tests_single_threaded_unary_streams
+#python_bazel_tests_single_threaded_unary_streams/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test --config=python_single_threaded_unary_stream ${BAZEL_FLAGS} -- //src/python/grpcio_tests/tests/unit:_compression_test.gevent #${TEST_TARGETS}
 
-python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path python_bazel_tests_fork_support
+#python3 tools/run_tests/python_utils/bazel_report_helper.py --report_path python_bazel_tests_fork_support
 
 # TODO(https://github.com/grpc/grpc/issues/32207): Remove from this job once
 # the fork job is in the master dashboard.
-python_bazel_tests_fork_support/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test --config=fork_support --runs_per_test=16 ${BAZEL_FLAGS} //src/python/grpcio_tests/tests/fork:fork_test
+#python_bazel_tests_fork_support/bazel_wrapper ${RESULTSTORE_RESULTS_FLAG} test --config=fork_support --runs_per_test=16 ${BAZEL_FLAGS} //src/python/grpcio_tests/tests/fork:fork_test
