@@ -42,11 +42,19 @@ local_repository(
     path = "third_party/utf8_range",
 )
 
+load("@rules_python//python:repositories.bzl", "python_register_toolchains")
+
+python_register_toolchains(
+    name = "python_3_11",
+    python_version = "3.11",
+)
+
 load("@rules_python//python:pip.bzl", "pip_parse")
 
 pip_parse(
     name = "grpc_python_dependencies",
     requirements_lock = "@com_github_grpc_grpc//:requirements.bazel.lock",
+    python_interpreter_target = "@python_3_11_host//:python",
 )
 
 load("@grpc_python_dependencies//:requirements.bzl", "install_deps")
@@ -114,11 +122,4 @@ opentelemetry_extra_deps()
 bind(
     name = "madler_zlib",
     actual = "@zlib//:zlib",
-)
-
-load("@rules_python//python:repositories.bzl", "python_register_toolchains")
-
-python_register_toolchains(
-    name = "python_3_11",
-    python_version = "3.11",
 )
