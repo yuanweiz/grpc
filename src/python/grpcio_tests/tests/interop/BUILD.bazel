@@ -149,3 +149,10 @@ py_test(
         "//src/python/grpcio_tests/tests/unit:test_common",
     ],
 )
+
+py_binary(
+    name = "print_py_version",
+    srcs = ["print_py_version.py"],
+    python_version = "PY3",
+    deps = [requirement("gevent")],
+)
