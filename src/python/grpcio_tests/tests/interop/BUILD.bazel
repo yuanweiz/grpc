@@ -155,6 +155,6 @@ py_binary(
     python_version = "PY3",
     deps = [
         requirement("gevent"),
-        "@typing_extensions",
+        "@grpc_typing_extensions//:typing_extensions",
     ],
 )
