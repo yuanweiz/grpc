@@ -25,23 +25,6 @@ local_repository(
     path = "../python_second_test_repo",
 )
 
-load("@com_google_protobuf//python/dist:system_python.bzl", "system_python")
-
-system_python(
-    name = "system_python",
-    minimum_python_version = "3.9",
-)
-
-load("@system_python//:pip.bzl", "pip_parse")
-
-pip_parse(
-    name = "pip_deps",
-    requirements = "@com_google_protobuf//python:requirements.txt",
-    requirements_overrides = {
-        "3.11": "@com_google_protobuf//python:requirements_311.txt",
-    },
-)
-
 load("@rules_python//python:repositories.bzl", "python_register_toolchains")
 
 python_register_toolchains(

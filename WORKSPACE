@@ -61,23 +61,6 @@ load("@grpc_python_dependencies//:requirements.bzl", "install_deps")
 
 install_deps()
 
-load("@com_google_protobuf//python/dist:system_python.bzl", "system_python")
-
-system_python(
-    name = "system_python",
-    minimum_python_version = "3.9",
-)
-
-load("@system_python//:pip.bzl", system_pip_parse = "pip_parse")
-
-system_pip_parse(
-    name = "pip_deps",
-    requirements = "@com_google_protobuf//python:requirements.txt",
-    requirements_overrides = {
-        "3.11": "@com_google_protobuf//python:requirements_311.txt",
-    },
-)
-
 http_archive(
     name = "build_bazel_rules_swift",
     sha256 = "bf2861de6bf75115288468f340b0c4609cc99cc1ccc7668f0f71adfd853eedb3",
