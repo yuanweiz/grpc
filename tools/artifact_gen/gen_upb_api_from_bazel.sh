@@ -36,23 +36,27 @@ cd "$(dirname "$0")/../.."
 
 # Now that the tool is built, we can move the executable to a temporary location
 # to avoid issues with the nested bazel workspaces.
-TMP_DIR=$(mktemp -d)
-cp tools/artifact_gen/bazel-bin/gen_upb_api_from_bazel "${TMP_DIR}/"
+#TMP_DIR=$(mktemp -d)
+TMP_DIR=./tmp
+cp -f tools/artifact_gen/bazel-bin/gen_upb_api_from_bazel "${TMP_DIR}/"
 # Clean bazel generated files from sub-workspace to avoid conflicts
 rm -rf tools/artifact_gen/bazel-*
 
 # Clean existing generated files
-${TMP_DIR}/gen_upb_api_from_bazel --mode=clean $@
+${TMP_DIR}/gen_upb_api_from_bazel --verbose --mode=clean $@
 
-UPB_RULES_XML=$(mktemp)
-DEPS_XML=$(mktemp)
-trap "rm -f ${UPB_RULES_XML} ${DEPS_XML}; rm -rf ${TMP_DIR}" EXIT
+UPB_RULES_XML=${TMP_DIR}/upb_rules.xml
+#UPB_RULES_XML=$(mktemp)
+DEPS_XML=${TMP_DIR}/deps.xml
+#DEPS_XML=$(mktemp)
+#trap "rm -f ${UPB_RULES_XML} ${DEPS_XML}; rm -rf ${TMP_DIR}" EXIT
 
 # Query for upb rules from the main grpc workspace. This must be run from the root.
 tools/bazel query --output xml --noimplicit_deps //:all > "${UPB_RULES_XML}"
 
 # Now we can use the generator to get the list of deps.
 DEPS_LIST=$(${TMP_DIR}/gen_upb_api_from_bazel \
+              --verbose \
               --mode=list_deps \
               --upb_rules_xml="${UPB_RULES_XML}")
 
@@ -67,6 +71,7 @@ fi
 
 # Get the list of upb targets to build
 BUILD_TARGETS=$(${TMP_DIR}/gen_upb_api_from_bazel \
+                  --verbose \
                   --mode=list_build_targets \
                   --upb_rules_xml="${UPB_RULES_XML}")
 
@@ -78,6 +83,7 @@ fi
 # Run the C++ program to copy the generated files.
 ${TMP_DIR}/gen_upb_api_from_bazel \
   --mode=generate_and_copy \
+  --verbose \
   --upb_rules_xml="${UPB_RULES_XML}" \
   --deps_xml="${DEPS_XML}" \
   "$@"
