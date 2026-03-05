@@ -277,12 +277,14 @@ void CopyFile(const std::string& src, const std::string& dest) {
   std::ifstream src_file(src, std::ios::binary);
   if (!src_file) {
     std::cerr << "Error: Cannot open source file: " << src << std::endl;
+    return;
     exit(1);
   }
   
   std::ofstream dest_file(dest_path, std::ios::binary);
   if (!dest_file) {
     std::cerr << "Error: Cannot open destination file: " << dest << std::endl;
+    return;
     exit(1);
   }
   
@@ -329,6 +331,28 @@ void CopyUpbGeneratedFiles(std::vector<Rule>& rules, bool verbose,
         std::string file = GetUpbPath(proto_file, ext);
         std::string src = GetBazelBinRootPath(external_repo_prefix, file);
         std::string dest = output_dir + "/" + file;
+        if (absl::StrContains(src, "com_envoyproxy_protoc_gen_validate")
+            ||
+absl::StrContains(src, "protoc-gen-validate+")
+            ) {
+          std::stringstream buffer;
+          buffer
+            << "src=" << src << "\n"
+            << "dest=" << dest << "\n"
+            << "rule.name=" << rule.name << "\n"
+            << "rule.type=" << rule.type << "\n";
+          for (const auto& src: rule.srcs){
+            buffer << "rule.src=" << src << "\n";
+          }
+          for (const auto& dep: rule.deps){
+            buffer << "rule.dep=" << dep << "\n";
+          }
+          for (const auto& proto_file: rule.proto_files){
+            buffer << "rule.proto_file=" << proto_file << "\n";
+          }
+          std::cerr << buffer.str()
+            << std::endl;
+        }
         files_to_copy[src] = dest;
       }
     }
