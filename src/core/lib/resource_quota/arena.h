@@ -76,6 +76,7 @@ class BaseArenaContextTraits {
  protected:
   // Allocate a new context id and register the destruction function.
   static uint16_t MakeId(void (*destroy)(void* ptr)) {
+    LOG(INFO) << "MakeId: destroy==" <<destroy;
     auto& traits = RegisteredTraits();
     const uint16_t id = static_cast<uint16_t>(traits.size());
     traits.push_back(destroy);
@@ -96,13 +97,20 @@ class ArenaContextTraits : public BaseArenaContextTraits {
   GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION static uint16_t id() {
     return id_;
   }
-  static inline const uint16_t id_{
-    BaseArenaContextTraits::MakeId(DestroyArenaContext<T>)};
+  static const uint16_t id_;
+//  static const uint16_t id_{
+//    BaseArenaContextTraits::MakeId(DestroyArenaContext<T>)};
 };
 
 template <typename T>
+const uint16_t ArenaContextTraits<T>::id_ =
+    BaseArenaContextTraits::MakeId(DestroyArenaContext<T>);
+
+template <typename T>
 GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION inline void DestroyArenaContext(void* p) {
-  ArenaContextType<T>::Destroy(static_cast<T*>(p));
+  T* pt = static_cast<T*>(p);
+  LOG(INFO) << "DestroyArenaContext: p=" << p << ", pt=" << pt;
+  ArenaContextType<T>::Destroy(pt);
 }
 
 template <typename T, typename SfinaeVoid = void>
@@ -339,7 +347,8 @@ class Arena final : public RefCounted<Arena, NonPolymorphicRefCount,
     auto id = arena_detail::ArenaContextTraits<T>::id();
     void*& slot = contexts()[id];
 
-    LOG(INFO) << "context == " << context << ", ctxs == " << ctxs
+    LOG(INFO) << "this == " << this
+      << ",context == " << context << ", ctxs == " << ctxs
       <<", id == " << id << ", slot==" << slot;
     arena_detail::_DumpStackTrace();
 
