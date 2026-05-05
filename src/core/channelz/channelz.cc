@@ -52,6 +52,8 @@
 #include "absl/strings/escaping.h"
 #include "absl/strings/str_cat.h"
 #include "absl/strings/strip.h"
+#include "absl/debugging/stacktrace.h"
+#include "absl/debugging/symbolize.h"
 
 namespace grpc_core {
 namespace channelz {
@@ -60,6 +62,25 @@ namespace channelz {
 // DataSink
 //
 
+namespace {
+void _DumpStackTrace() {
+  const int kMaxDepth = 32;
+  void* stack[kMaxDepth];
+
+  // 1. Capture the stack trace
+  int depth = absl::GetStackTrace(stack, kMaxDepth, 1);
+
+  for (int i = 0; i < depth; ++i) {
+    char symbol[1024];
+    // 2. Symbolize each address
+    if (absl::Symbolize(stack[i], symbol, sizeof(symbol))) {
+      VLOG(2) << "  frame #" << i << ": " << symbol << " [" << stack[i] << "]";
+    } else {
+      VLOG(2) << "  frame #" << i << ": (unknown) [" << stack[i] << "]";
+    }
+  }
+}
+}  // namespace
 void DataSinkImplementation::AddData(absl::string_view name,
                                      std::unique_ptr<Data> data) {
   MutexLock lock(&mu_);
@@ -232,11 +253,16 @@ std::string BaseNode::SerializeEntityToString(absl::Duration timeout) {
 // DataSource
 //
 
-DataSource::DataSource(RefCountedPtr<BaseNode> node) : node_(std::move(node)) {}
+DataSource::DataSource(RefCountedPtr<BaseNode> node) : node_(std::move(node)) {
+  LOG(INFO) << "Initializing DataSource: " << this;
+  _DumpStackTrace();
+}
 
 DataSource::~DataSource() {
   DCHECK(node_ == nullptr) << "DataSource must be ResetDataSource()'d in the "
                               "most derived class before destruction";
+  LOG(INFO) << "Destroying DataSource: " << this;
+  _DumpStackTrace();
 }
 
 void DataSource::SourceConstructed() {

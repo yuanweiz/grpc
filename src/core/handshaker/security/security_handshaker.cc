@@ -332,7 +332,10 @@ grpc_error_handle SecurityHandshaker::CheckPeerLocked() {
   const grpc_auth_property* prop = grpc_auth_property_iterator_next(&it);
   if (!prop ||
       !strcmp(tsi_security_level_to_string(TSI_SECURITY_NONE), prop->value)) {
-    global_stats().IncrementInsecureConnectionsCreated();
+    auto& stats = global_stats();
+    VLOG(2) << "stats address: " << &stats;
+    VLOG(2) << "stats size: " << sizeof(GlobalStatsCollector);
+    stats.IncrementInsecureConnectionsCreated();
   }
   return absl::OkStatus();
 }

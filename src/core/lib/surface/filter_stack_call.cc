@@ -72,6 +72,9 @@
 #include "absl/strings/str_cat.h"
 #include "absl/strings/string_view.h"
 
+#include "absl/debugging/stacktrace.h"
+#include "absl/debugging/symbolize.h"
+
 namespace grpc_core {
 
 // Alias to make this type available in Call implementation without a grpc_core
@@ -88,8 +91,30 @@ FilterStackCall::FilterStackCall(RefCountedPtr<Arena> arena,
   SourceConstructed();
 }
 
+namespace {
+void _DumpStackTrace() {
+  const int kMaxDepth = 32;
+  void* stack[kMaxDepth];
+
+  // 1. Capture the stack trace
+  int depth = absl::GetStackTrace(stack, kMaxDepth, 1);
+
+  for (int i = 0; i < depth; ++i) {
+    char symbol[1024];
+    // 2. Symbolize each address
+    if (absl::Symbolize(stack[i], symbol, sizeof(symbol))) {
+      VLOG(2) << "  frame #" << i << ": " << symbol << " [" << stack[i] << "]";
+    } else {
+      VLOG(2) << "  frame #" << i << ": (unknown) [" << stack[i] << "]";
+    }
+  }
+}
+}  // namespace
+
 grpc_error_handle FilterStackCall::Create(grpc_call_create_args* args,
                                           grpc_call** out_call) {
+  LOG(INFO) << "sizeof(FilterStackCall) == " << sizeof(FilterStackCall);
+  _DumpStackTrace();
   Channel* channel = args->channel.get();
 
   auto add_init_error = [](grpc_error_handle* composite,
@@ -107,6 +132,7 @@ grpc_error_handle FilterStackCall::Create(grpc_call_create_args* args,
   size_t call_alloc_size =
       GPR_ROUND_UP_TO_ALIGNMENT_SIZE(sizeof(FilterStackCall)) +
       channel_stack->call_stack_size;
+  LOG(INFO) << "call_alloc_size: " << call_alloc_size;
 
   RefCountedPtr<Arena> arena = channel->call_arena_allocator()->MakeArena();
   arena->SetContext<grpc_event_engine::experimental::EventEngine>(
@@ -115,6 +141,7 @@ grpc_error_handle FilterStackCall::Create(grpc_call_create_args* args,
   GRPC_DCHECK(FromC(call->c_ptr()) == call);
   GRPC_DCHECK(FromCallStack(call->call_stack()) == call);
   *out_call = call->c_ptr();
+  LOG(INFO) << "*out_call == " << *out_call;
   grpc_slice path = grpc_empty_slice();
   ScopedContext ctx(call);
   Call* parent = Call::FromC(args->parent);

@@ -32,6 +32,7 @@
 static grpc_completion_queue* default_create(
     const grpc_completion_queue_factory* /*factory*/,
     const grpc_completion_queue_attributes* attr) {
+  VLOG(2) << "WEI: 17";
   return grpc_completion_queue_create_internal(
       attr->cq_completion_type, attr->cq_polling_type, attr->cq_shutdown_cb);
 }
@@ -87,7 +88,10 @@ grpc_completion_queue* grpc_completion_queue_create_for_callback(
 grpc_completion_queue* grpc_completion_queue_create(
     const grpc_completion_queue_factory* factory,
     const grpc_completion_queue_attributes* attr, void* reserved) {
+  VLOG(2) << "WEI: 13";
   grpc_core::ExecCtx exec_ctx;
+  VLOG(2) << "WEI: 14";
   GRPC_CHECK(!reserved);
+  VLOG(2) << "WEI: 15";
   return factory->vtable->create(factory, attr);
 }

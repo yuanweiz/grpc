@@ -46,6 +46,7 @@
 #include <list>
 
 #include "absl/log/absl_check.h"
+#include "absl/log/log.h"
 
 struct grpc_completion_queue;
 
@@ -248,10 +249,13 @@ class CompletionQueue : private grpc::internal::GrpcLibrary {
  protected:
   /// Private constructor of CompletionQueue only visible to friend classes
   explicit CompletionQueue(const grpc_completion_queue_attributes& attributes) {
+    VLOG(2) << "WEI: 10";
     cq_ = grpc_completion_queue_create(
         grpc_completion_queue_factory_lookup(&attributes), &attributes,
         nullptr);
+    VLOG(2) << "WEI: 11";
     InitialAvalanching();  // reserve this for the future shutdown
+    VLOG(2) << "WEI: 12";
   }
 
  private:

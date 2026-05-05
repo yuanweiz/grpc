@@ -302,11 +302,14 @@ class AsyncEnd2endTest : public ::testing::TestWithParam<TestScenario> {
   AsyncEnd2endTest() { GetParam().Log(); }
 
   void SetUp() override {
+    VLOG(2) << "WEI: 1";
     port_ = grpc_pick_unused_port_or_die();
+    VLOG(2) << "WEI: 2";
     server_address_ << "localhost:" << port_;
 
     // Setup server
     BuildAndStartServer();
+    VLOG(2) << "WEI: 3";
   }
 
   void TearDown() override {
@@ -337,14 +340,18 @@ class AsyncEnd2endTest : public ::testing::TestWithParam<TestScenario> {
     if (GetParam().health_check_service) {
       builder.RegisterService(&health_check_);
     }
+    VLOG(2) << "WEI: 4";
     cq_ = builder.AddCompletionQueue();
 
+    VLOG(2) << "WEI: 7";
     // TODO(zyc): make a test option to choose whether sync plugins should be
     // deleted
     std::unique_ptr<ServerBuilderOption> sync_plugin_disabler(
         new ServerBuilderSyncPluginDisabler());
+    VLOG(2) << "WEI: 5";
     builder.SetOption(std::move(sync_plugin_disabler));
     server_ = builder.BuildAndStart();
+    VLOG(2) << "WEI: 6";
   }
 
   void ResetStub() {

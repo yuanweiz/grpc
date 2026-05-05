@@ -39,6 +39,12 @@
 #include "src/core/lib/resource_quota/memory_quota.h"
 #include "src/core/util/alloc.h"
 #include "src/core/util/construct_destruct.h"
+#include "src/core/util/no_destruct.h"
+
+#include "absl/log/log.h"
+#include "absl/strings/str_cat.h"
+#include "absl/debugging/stacktrace.h"
+#include "absl/debugging/symbolize.h"
 
 namespace grpc_core {
 
@@ -87,10 +93,11 @@ class BaseArenaContextTraits {
 template <typename T>
 class ArenaContextTraits : public BaseArenaContextTraits {
  public:
-  GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION static uint16_t id() { return id_; }
-
- private:
-  static const uint16_t id_;
+  GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION static uint16_t id() {
+    static NoDestruct<uint16_t> value{
+      BaseArenaContextTraits::MakeId(DestroyArenaContext<T>)};
+    return *value;
+  }
 };
 
 template <typename T>
@@ -98,9 +105,8 @@ GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION inline void DestroyArenaContext(void* p) {
   ArenaContextType<T>::Destroy(static_cast<T*>(p));
 }
 
-template <typename T>
-const uint16_t ArenaContextTraits<T>::id_ =
-    BaseArenaContextTraits::MakeId(DestroyArenaContext<T>);
+//template <typename T>
+//const uint16_t ArenaContextTraits<T>::id_ =
 
 template <typename T, typename SfinaeVoid = void>
 struct GetContextId {
@@ -129,6 +135,27 @@ struct IfArray<T[], A, B> {
 struct UnrefDestroy {
   void operator()(const Arena* arena) const;
 };
+
+inline void _DumpStackTrace() {
+  const int kMaxDepth = 32;
+  void* stack[kMaxDepth];
+
+  // 1. Capture the stack trace
+  int depth = absl::GetStackTrace(stack, kMaxDepth, 1);
+  std::string buf = "Stack trace:\n";
+
+  for (int i = 0; i < depth; ++i) {
+    char symbol[1024];
+    // 2. Symbolize each address
+    if (absl::Symbolize(stack[i], symbol, sizeof(symbol))) {
+      //VLOG(2) << "  frame #" << i << ": " << symbol << " [" << stack[i] << "]";
+      absl::StrAppend(&buf, "  frame #", i, ": ", symbol, " [", absl::Hex(stack[i]), "]\n");
+    } else {
+      absl::StrAppend(&buf, "  frame #", i, ": (unknown) [", absl::Hex(stack[i]), "]\n");
+    }
+  }
+  VLOG(2) << buf;
+}
 
 }  // namespace arena_detail
 
@@ -311,7 +338,14 @@ class Arena final : public RefCounted<Arena, NonPolymorphicRefCount,
 
   template <typename T>
   void SetContext(T* context) {
-    void*& slot = contexts()[arena_detail::ArenaContextTraits<T>::id()];
+    void** ctxs = contexts();
+    auto id = arena_detail::ArenaContextTraits<T>::id();
+    void*& slot = contexts()[id];
+
+    LOG(INFO) << "context == " << context << ", ctxs == " << ctxs
+      <<", id == " << id << ", slot==" << slot;
+    arena_detail::_DumpStackTrace();
+
     if (slot != nullptr) {
       ArenaContextType<T>::Destroy(static_cast<T*>(slot));
     }

@@ -13,6 +13,8 @@
 # limitations under the License.
 
 # Configure ccache if requested by environment variable GRPC_BUILD_ENABLE_CCACHE
+set(EXTRA_MSVC_FLAGS "/fsanitize=address")
+#set(EXTRA_MSVC_FLAGS "/fsanitize=address")
 
 if ($ENV{GRPC_BUILD_ENABLE_CCACHE})
   find_program(gRPC_CCACHE_BINARY ccache)
@@ -20,6 +22,10 @@ if ($ENV{GRPC_BUILD_ENABLE_CCACHE})
     message(STATUS "Will use ccache as compiler launcher: ${gRPC_CCACHE_BINARY}")
     set(CMAKE_C_COMPILER_LAUNCHER   ${gRPC_CCACHE_BINARY})
     set(CMAKE_CXX_COMPILER_LAUNCHER ${gRPC_CCACHE_BINARY})
+    # Append it to the specific build type
+    if (USE_ASAN)
+      set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO} ${EXTRA_MSVC_FLAGS}")
+    endif()
 
     # avoid conflicts when multiple processes try to write to PDB files. Instead make debug info part of object files.
     if(CMAKE_BUILD_TYPE STREQUAL "Debug")
@@ -29,8 +35,8 @@ if ($ENV{GRPC_BUILD_ENABLE_CCACHE})
       string(REPLACE "/Zi" "/Z7" CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE}")
       string(REPLACE "/Zi" "/Z7" CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE}")
     elseif(CMAKE_BUILD_TYPE STREQUAL "RelWithDebInfo")
-      string(REPLACE "/Zi" "/Z7" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
-      string(REPLACE "/Zi" "/Z7" CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
+	    #string(REPLACE "/Zi" "/Z7" CMAKE_CXX_FLAGS_RELWITHDEBINFO "${CMAKE_CXX_FLAGS_RELWITHDEBINFO}")
+      	    #string(REPLACE "/Zi" "/Z7" CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO}")
     endif()
   else()
     message(STATUS "Build will not use ccache (ccache binary not found).")

@@ -571,26 +571,31 @@ grpc_completion_queue* grpc_completion_queue_create_internal(
     grpc_completion_queue_functor* shutdown_callback) {
   grpc_completion_queue* cq;
 
-  GRPC_TRACE_LOG(api, INFO)
-      << "grpc_completion_queue_create_internal(completion_type="
-      << completion_type << ", polling_type=" << polling_type << ")";
+  // GRPC_TRACE_LOG(api, INFO)
+  VLOG(2) << "grpc_completion_queue_create_internal(completion_type="
+          << completion_type << ", polling_type=" << polling_type << ")";
 
   switch (completion_type) {
     case GRPC_CQ_NEXT:
+      VLOG(2) << "WEI: 30";
       grpc_core::global_stats().IncrementCqNextCreates();
       break;
     case GRPC_CQ_PLUCK:
+      VLOG(2) << "WEI: 31";
       grpc_core::global_stats().IncrementCqPluckCreates();
       break;
     case GRPC_CQ_CALLBACK:
+      VLOG(2) << "WEI: 32";
       grpc_core::global_stats().IncrementCqCallbackCreates();
       break;
   }
+  VLOG(2) << "WEI: 20";
 
   const cq_vtable* vtable = &g_cq_vtable[completion_type];
   const cq_poller_vtable* poller_vtable =
       &g_poller_vtable_by_poller_type[polling_type];
 
+  VLOG(2) << "WEI: 21";
   grpc_core::ExecCtx exec_ctx;
 
   cq = static_cast<grpc_completion_queue*>(
@@ -600,15 +605,20 @@ grpc_completion_queue* grpc_completion_queue_create_internal(
   cq->vtable = vtable;
   cq->poller_vtable = poller_vtable;
 
+  VLOG(2) << "WEI: 23";
   // One for destroy(), one for pollset_shutdown
   new (&cq->owning_refs) grpc_core::RefCount(
       2, GRPC_TRACE_FLAG_ENABLED(cq_refcount) ? "completion_queue" : nullptr);
 
+  VLOG(2) << "WEI: 24";
   poller_vtable->init(POLLSET_FROM_CQ(cq), &cq->mu);
+  VLOG(2) << "WEI: 25";
   vtable->init(DATA_FROM_CQ(cq), shutdown_callback);
 
+  VLOG(2) << "WEI: 26";
   GRPC_CLOSURE_INIT(&cq->pollset_shutdown_done, on_pollset_shutdown_done, cq,
                     grpc_schedule_on_exec_ctx);
+  VLOG(2) << "WEI: 22";
   return cq;
 }
 

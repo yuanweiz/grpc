@@ -331,6 +331,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
   ChannelArguments args = BuildChannelArgs();
 
   // == Determine if the server has any syncrhonous methods ==
+  VLOG(2) << "WEI: 41";
   bool has_sync_methods = false;
   for (const auto& value : services_) {
     if (value->service->has_synchronous_methods()) {
@@ -338,6 +339,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
       break;
     }
   }
+  VLOG(2) << "WEI: 42";
 
   if (!has_sync_methods) {
     for (const auto& value : plugins_) {
@@ -347,6 +349,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
       }
     }
   }
+  VLOG(2) << "WEI: 43";
 
   // If this is a Sync server, i.e a server expositing sync API, then the server
   // needs to create some completion queues to listen for incoming requests.
@@ -367,6 +370,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
       break;
     }
   }
+  VLOG(2) << "WEI: 44";
 
   // == Determine if the server has any callback methods ==
   bool has_callback_methods = false;
@@ -395,6 +399,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
     }
   }
 
+  VLOG(2) << "WEI: 45";
   // TODO(vjpai): Add a section here for plugins once they can support callback
   // methods
 
@@ -410,6 +415,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
     VLOG(2) << "Callback server.";
   }
 
+  VLOG(2) << "WEI: 50";
   std::unique_ptr<grpc::Server> server(new grpc::Server(
       &args, sync_server_cqs, sync_server_settings_.min_pollers,
       sync_server_settings_.max_pollers, sync_server_settings_.cq_timeout_msec,
@@ -418,6 +424,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
 
   ServerInitializer* initializer = server->initializer();
 
+  VLOG(2) << "WEI: 51";
   // Register all the completion queues with the server. i.e
   //  1. sync_server_cqs: internal completion queues created IF this is a sync
   //     server
@@ -427,6 +434,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
     grpc_server_register_completion_queue(server->server_, cq->cq(), nullptr);
     has_frequently_polled_cqs = true;
   }
+  VLOG(2) << "WEI: 46";
 
   if (has_callback_methods || callback_generic_service_ != nullptr) {
     auto* cq = server->CallbackCQ();
@@ -464,6 +472,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
       }
     }
   }
+  VLOG(2) << "WEI: 47";
 
   if (!has_frequently_polled_cqs) {
     LOG(ERROR)
@@ -496,6 +505,7 @@ std::unique_ptr<grpc::Server> ServerBuilder::BuildAndStart() {
       }
     }
   }
+  VLOG(2) << "WEI: 48";
 
   bool added_port = false;
   for (auto& port : ports_) {

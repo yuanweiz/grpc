@@ -42,6 +42,8 @@
 #include "test/core/test_util/test_config.h"
 #include "test/cpp/util/test_credentials_provider.h"
 #include "gtest/gtest.h"
+#include "absl/debugging/symbolize.h"
+#include "absl/flags/parse.h"
 #include "absl/log/log.h"
 
 namespace grpc {
@@ -251,16 +253,25 @@ class SimpleAllocatorTest : public MessageAllocatorEnd2endTestBase {
 
 TEST_P(SimpleAllocatorTest, SimpleRpc) {
   const int kRpcCount = 10;
+  LOG(INFO) << "WEI: 1";
   std::unique_ptr<SimpleAllocator> allocator(new SimpleAllocator);
+  LOG(INFO) << "WEI: 2";
   CreateServer(allocator.get());
+  LOG(INFO) << "WEI: 3";
   ResetStub();
+  LOG(INFO) << "WEI: 4";
   SendRpcs(kRpcCount);
+  LOG(INFO) << "WEI: 5";
   // messages_deallocaton_count is updated in Release after server side OnDone.
   // Destroy server to make sure it has been updated.
   DestroyServer();
+  LOG(INFO) << "WEI: 6";
   EXPECT_EQ(kRpcCount, allocator->allocation_count);
+  LOG(INFO) << "WEI: 7";
   EXPECT_EQ(kRpcCount, allocator->messages_deallocation_count);
+  LOG(INFO) << "WEI: 8";
   EXPECT_EQ(0, allocator->request_deallocation_count);
+  LOG(INFO) << "WEI: 9";
 }
 
 TEST_P(SimpleAllocatorTest, RpcWithEarlyFreeRequest) {
@@ -393,6 +404,7 @@ INSTANTIATE_TEST_SUITE_P(ArenaAllocatorTest, ArenaAllocatorTest,
 int main(int argc, char** argv) {
   grpc::testing::TestEnvironment env(&argc, argv);
   ::testing::InitGoogleTest(&argc, argv);
+  absl::ParseCommandLine(argc, argv);
   int ret = RUN_ALL_TESTS();
   return ret;
 }

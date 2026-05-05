@@ -408,7 +408,7 @@ class DataSource {
   }
 
  protected:
-  ~DataSource();
+  virtual ~DataSource();
   RefCountedPtr<BaseNode> channelz_node() { return node_; }
   const BaseNode* channelz_node() const { return node_.get(); }
 
