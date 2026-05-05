@@ -94,19 +94,16 @@ template <typename T>
 class ArenaContextTraits : public BaseArenaContextTraits {
  public:
   GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION static uint16_t id() {
-    static NoDestruct<uint16_t> value{
-      BaseArenaContextTraits::MakeId(DestroyArenaContext<T>)};
-    return *value;
+    return id_;
   }
+  static inline const uint16_t id_{
+    BaseArenaContextTraits::MakeId(DestroyArenaContext<T>)};
 };
 
 template <typename T>
 GPR_ATTRIBUTE_ALWAYS_INLINE_FUNCTION inline void DestroyArenaContext(void* p) {
   ArenaContextType<T>::Destroy(static_cast<T*>(p));
 }
-
-//template <typename T>
-//const uint16_t ArenaContextTraits<T>::id_ =
 
 template <typename T, typename SfinaeVoid = void>
 struct GetContextId {
