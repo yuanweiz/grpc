@@ -14,7 +14,6 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 typedef struct {
   upb_MiniTableField fields[3];
 } grpc__lookup__v1__NameMatcher_msg_init_Fields;

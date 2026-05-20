@@ -15,7 +15,6 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension google_api_http_ext = {
   {72295728, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},

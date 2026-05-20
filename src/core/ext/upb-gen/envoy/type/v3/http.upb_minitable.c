@@ -14,7 +14,6 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 const upb_MiniTableFile envoy_type_v3_http_proto_upb_file_layout = {
   NULL,
   NULL,

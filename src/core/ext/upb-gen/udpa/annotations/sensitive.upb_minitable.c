@@ -14,7 +14,6 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension udpa_annotations_sensitive_ext = {
   {76569463, 0, 0, UPB_SIZE(3, 4), 8, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},

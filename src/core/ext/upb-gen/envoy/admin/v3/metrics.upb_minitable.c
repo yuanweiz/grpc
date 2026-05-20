@@ -15,7 +15,6 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 typedef struct {
   upb_MiniTableField fields[3];
 } envoy__admin__v3__SimpleMetric_msg_init_Fields;

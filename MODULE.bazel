@@ -64,16 +64,20 @@ bazel_dep(name = "protobuf", version = "33.5", repo_name = "com_google_protobuf"
 _GOOD="7eef275fa4dcb3cb0d61a1e909330e820229c964"
 _BAD="01331f9e51775b7e11f8b61d778ea98ddb522ad1"
 _COMMIT=_BAD
-archive_override(
+#archive_override(
+#    module_name = "protobuf",
+#    strip_prefix = "protobuf-{}".format(_COMMIT),
+#    urls = [
+#        "https://github.com/protocolbuffers/protobuf/archive/{}.tar.gz".format(_COMMIT),
+#    ],
+#    patch_strip = 1,
+#    patches = [
+#        "//bazel:protobuf-remove-extension.patch",
+#    ],
+#)
+local_path_override(
     module_name = "protobuf",
-    strip_prefix = "protobuf-{}".format(_COMMIT),
-    urls = [
-        "https://github.com/protocolbuffers/protobuf/archive/{}.tar.gz".format(_COMMIT),
-    ],
-    patch_strip = 1,
-    patches = [
-        "//bazel:protobuf-remove-extension.patch",
-    ],
+    path = "../protobuf",
 )
 
 bazel_dep(name = "protoc-gen-validate", version = "1.2.1.bcr.1", repo_name = "com_envoyproxy_protoc_gen_validate")  # Not needed directly
