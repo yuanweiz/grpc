@@ -1,5 +1,9 @@
 # bazelrc file
 
+# TODO(weizheyuan): remove these after testing
+common --check_bzl_visibility=false
+common --check_visibility=false
+
 common:bzlmod --enable_bzlmod
 common:bzlmod --noenable_workspace
 

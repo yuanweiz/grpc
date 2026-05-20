@@ -13,22 +13,23 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField google_protobuf_Duration__fields[2] = {
+typedef struct {
+  upb_MiniTableField fields[2];
+} google__protobuf__Duration_msg_init_Fields;
+
+static const google__protobuf__Duration_msg_init_Fields google_protobuf_Duration__fields = {{
   {1, 16, 0, kUpb_NoSub, 3, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {2, 8, 0, kUpb_NoSub, 5, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_4Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable google__protobuf__Duration_msg_init = {
-  NULL,
-  &google_protobuf_Duration__fields[0],
+  &google_protobuf_Duration__fields.fields[0],
   24, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "google.protobuf.Duration",
 #endif
 };
 
-const upb_MiniTable* google__protobuf__Duration_msg_init_ptr = &google__protobuf__Duration_msg_init;
 static const upb_MiniTable *messages_layout[1] = {
   &google__protobuf__Duration_msg_init,
 };

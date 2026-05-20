@@ -14,27 +14,28 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField udpa_annotations_StatusAnnotation__fields[2] = {
+typedef struct {
+  upb_MiniTableField fields[2];
+} udpa__annotations__StatusAnnotation_msg_init_Fields;
+
+static const udpa__annotations__StatusAnnotation_msg_init_Fields udpa_annotations_StatusAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {2, 12, 0, kUpb_NoSub, 5, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsAlternate | ((int)kUpb_FieldRep_4Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable udpa__annotations__StatusAnnotation_msg_init = {
-  NULL,
-  &udpa_annotations_StatusAnnotation__fields[0],
+  &udpa_annotations_StatusAnnotation__fields.fields[0],
   16, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "udpa.annotations.StatusAnnotation",
 #endif
 };
 
-const upb_MiniTable* udpa__annotations__StatusAnnotation_msg_init_ptr = &udpa__annotations__StatusAnnotation_msg_init;
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension udpa_annotations_file_status_ext = {
-  {222707719, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__FileOptions_msg_init,
+  {222707719, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &udpa__annotations__StatusAnnotation_msg_init},
+  &google__protobuf__FileOptions_msg_init,
 
 };
 static const upb_MiniTable *messages_layout[1] = {

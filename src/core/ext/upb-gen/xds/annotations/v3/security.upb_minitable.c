@@ -15,27 +15,28 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField xds_annotations_v3_FieldSecurityAnnotation__fields[2] = {
+typedef struct {
+  upb_MiniTableField fields[2];
+} xds__annotations__v3__FieldSecurityAnnotation_msg_init_Fields;
+
+static const xds__annotations__v3__FieldSecurityAnnotation_msg_init_Fields xds_annotations_v3_FieldSecurityAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {2, 9, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__annotations__v3__FieldSecurityAnnotation_msg_init = {
-  NULL,
-  &xds_annotations_v3_FieldSecurityAnnotation__fields[0],
+  &xds_annotations_v3_FieldSecurityAnnotation__fields.fields[0],
   16, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.annotations.v3.FieldSecurityAnnotation",
 #endif
 };
 
-const upb_MiniTable* xds__annotations__v3__FieldSecurityAnnotation_msg_init_ptr = &xds__annotations__v3__FieldSecurityAnnotation_msg_init;
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension xds_annotations_v3_security_ext = {
-  {99044135, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__FieldOptions_msg_init,
+  {99044135, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &xds__annotations__v3__FieldSecurityAnnotation_msg_init},
+  &google__protobuf__FieldOptions_msg_init,
 
 };
 static const upb_MiniTable *messages_layout[1] = {

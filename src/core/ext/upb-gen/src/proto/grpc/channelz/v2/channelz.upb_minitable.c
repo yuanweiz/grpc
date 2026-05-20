@@ -15,72 +15,77 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableSubInternal grpc_channelz_v2_Data__submsgs[1] = {
-  {.UPB_PRIVATE(submsg) = &google__protobuf__Any_msg_init_ptr},
-};
+typedef struct {
+  upb_MiniTableField fields[2];
+  upb_MiniTableSubInternal subs[1];
+} grpc__channelz__v2__Data_msg_init_Fields;
 
-static const upb_MiniTableField grpc_channelz_v2_Data__fields[2] = {
+static const grpc__channelz__v2__Data_msg_init_Fields grpc_channelz_v2_Data__fields = {{
   {1, 16, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-  {2, UPB_SIZE(12, 32), 64, 0, 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-};
+  {2, UPB_SIZE(12, 32), 64, 3, 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+ },
+  {
+  {.UPB_PRIVATE(submsg) = &google__protobuf__Any_msg_init},
+}};
 
 const upb_MiniTable grpc__channelz__v2__Data_msg_init = {
-  &grpc_channelz_v2_Data__submsgs[0],
-  &grpc_channelz_v2_Data__fields[0],
+  &grpc_channelz_v2_Data__fields.fields[0],
   UPB_SIZE(24, 40), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v2.Data",
 #endif
 };
 
-const upb_MiniTable* grpc__channelz__v2__Data_msg_init_ptr = &grpc__channelz__v2__Data_msg_init;
-static const upb_MiniTableSubInternal grpc_channelz_v2_Entity__submsgs[2] = {
-  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__Data_msg_init_ptr},
-  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__TraceEvent_msg_init_ptr},
-};
+typedef struct {
+  upb_MiniTableField fields[7];
+  upb_MiniTableSubInternal subs[2];
+} grpc__channelz__v2__Entity_msg_init_Fields;
 
-static const upb_MiniTableField grpc_channelz_v2_Entity__fields[7] = {
+static const grpc__channelz__v2__Entity_msg_init_Fields grpc_channelz_v2_Entity__fields = {{
   {1, 32, 0, kUpb_NoSub, 3, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {2, UPB_SIZE(24, 16), 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
   {3, UPB_SIZE(12, 40), 0, kUpb_NoSub, 3, (int)kUpb_FieldMode_Array | (int)kUpb_LabelFlags_IsPacked | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {4, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {5, 9, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-  {6, UPB_SIZE(16, 48), 0, 0, 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  {7, UPB_SIZE(20, 56), 0, 1, 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-};
+  {6, UPB_SIZE(16, 48), 0, UPB_SIZE(6, 7), 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+  {7, UPB_SIZE(20, 56), 0, UPB_SIZE(4, 6), 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+ },
+  {
+  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__Data_msg_init},
+  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__TraceEvent_msg_init},
+}};
 
 const upb_MiniTable grpc__channelz__v2__Entity_msg_init = {
-  &grpc_channelz_v2_Entity__submsgs[0],
-  &grpc_channelz_v2_Entity__fields[0],
+  &grpc_channelz_v2_Entity__fields.fields[0],
   UPB_SIZE(40, 64), 7, kUpb_ExtMode_NonExtendable, 7, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v2.Entity",
 #endif
 };
 
-const upb_MiniTable* grpc__channelz__v2__Entity_msg_init_ptr = &grpc__channelz__v2__Entity_msg_init;
-static const upb_MiniTableSubInternal grpc_channelz_v2_TraceEvent__submsgs[2] = {
-  {.UPB_PRIVATE(submsg) = &google__protobuf__Timestamp_msg_init_ptr},
-  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__Data_msg_init_ptr},
-};
+typedef struct {
+  upb_MiniTableField fields[3];
+  upb_MiniTableSubInternal subs[2];
+} grpc__channelz__v2__TraceEvent_msg_init_Fields;
 
-static const upb_MiniTableField grpc_channelz_v2_TraceEvent__fields[3] = {
+static const grpc__channelz__v2__TraceEvent_msg_init_Fields grpc_channelz_v2_TraceEvent__fields = {{
   {1, UPB_SIZE(20, 16), 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-  {2, UPB_SIZE(12, 32), 64, 0, 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  {3, UPB_SIZE(16, 40), 0, 1, 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-};
+  {2, UPB_SIZE(12, 32), 64, UPB_SIZE(6, 7), 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+  {3, UPB_SIZE(16, 40), 0, UPB_SIZE(4, 6), 11, (int)kUpb_FieldMode_Array | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+ },
+  {
+  {.UPB_PRIVATE(submsg) = &google__protobuf__Timestamp_msg_init},
+  {.UPB_PRIVATE(submsg) = &grpc__channelz__v2__Data_msg_init},
+}};
 
 const upb_MiniTable grpc__channelz__v2__TraceEvent_msg_init = {
-  &grpc_channelz_v2_TraceEvent__submsgs[0],
-  &grpc_channelz_v2_TraceEvent__fields[0],
+  &grpc_channelz_v2_TraceEvent__fields.fields[0],
   UPB_SIZE(32, 48), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v2.TraceEvent",
 #endif
 };
 
-const upb_MiniTable* grpc__channelz__v2__TraceEvent_msg_init_ptr = &grpc__channelz__v2__TraceEvent_msg_init;
 static const upb_MiniTable *messages_layout[3] = {
   &grpc__channelz__v2__Data_msg_init,
   &grpc__channelz__v2__Entity_msg_init,

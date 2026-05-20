@@ -19,28 +19,29 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableSubInternal envoy_config_trace_v3_LightstepConfig__submsgs[1] = {
-  {.UPB_PRIVATE(submsg) = &envoy__config__core__v3__DataSource_msg_init_ptr},
-};
+typedef struct {
+  upb_MiniTableField fields[4];
+  upb_MiniTableSubInternal subs[1];
+} envoy__config__trace__v3__LightstepConfig_msg_init_Fields;
 
-static const upb_MiniTableField envoy_config_trace_v3_LightstepConfig__fields[4] = {
+static const envoy__config__trace__v3__LightstepConfig_msg_init_Fields envoy_config_trace_v3_LightstepConfig__fields = {{
   {1, UPB_SIZE(20, 16), 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
   {2, UPB_SIZE(28, 32), 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
   {3, UPB_SIZE(12, 48), 0, kUpb_NoSub, 5, (int)kUpb_FieldMode_Array | (int)kUpb_LabelFlags_IsPacked | (int)kUpb_LabelFlags_IsAlternate | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  {4, UPB_SIZE(16, 56), 64, 0, 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-};
+  {4, UPB_SIZE(16, 56), 64, 3, 11, (int)kUpb_FieldMode_Scalar | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
+ },
+  {
+  {.UPB_PRIVATE(submsg) = &envoy__config__core__v3__DataSource_msg_init},
+}};
 
 const upb_MiniTable envoy__config__trace__v3__LightstepConfig_msg_init = {
-  &envoy_config_trace_v3_LightstepConfig__submsgs[0],
-  &envoy_config_trace_v3_LightstepConfig__fields[0],
+  &envoy_config_trace_v3_LightstepConfig__fields.fields[0],
   UPB_SIZE(40, 64), 4, kUpb_ExtMode_NonExtendable, 4, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.config.trace.v3.LightstepConfig",
 #endif
 };
 
-const upb_MiniTable* envoy__config__trace__v3__LightstepConfig_msg_init_ptr = &envoy__config__trace__v3__LightstepConfig_msg_init;
 static const upb_MiniTable *messages_layout[1] = {
   &envoy__config__trace__v3__LightstepConfig_msg_init,
 };

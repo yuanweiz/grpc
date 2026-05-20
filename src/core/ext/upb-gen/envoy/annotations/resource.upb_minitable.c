@@ -14,26 +14,27 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField envoy_annotations_ResourceAnnotation__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__annotations__ResourceAnnotation_msg_init_Fields;
+
+static const envoy__annotations__ResourceAnnotation_msg_init_Fields envoy_annotations_ResourceAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__annotations__ResourceAnnotation_msg_init = {
-  NULL,
-  &envoy_annotations_ResourceAnnotation__fields[0],
+  &envoy_annotations_ResourceAnnotation__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.annotations.ResourceAnnotation",
 #endif
 };
 
-const upb_MiniTable* envoy__annotations__ResourceAnnotation_msg_init_ptr = &envoy__annotations__ResourceAnnotation_msg_init;
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension envoy_annotations_resource_ext = {
-  {265073217, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__ServiceOptions_msg_init,
+  {265073217, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &envoy__annotations__ResourceAnnotation_msg_init},
+  &google__protobuf__ServiceOptions_msg_init,
 
 };
 static const upb_MiniTable *messages_layout[1] = {

@@ -15,26 +15,27 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField envoy_admin_v3_Memory__fields[6] = {
+typedef struct {
+  upb_MiniTableField fields[6];
+} envoy__admin__v3__Memory_msg_init_Fields;
+
+static const envoy__admin__v3__Memory_msg_init_Fields envoy_admin_v3_Memory__fields = {{
   {1, 8, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {2, 16, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {3, 24, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {4, 32, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {5, 40, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
   {6, 48, 0, kUpb_NoSub, 4, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_8Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__admin__v3__Memory_msg_init = {
-  NULL,
-  &envoy_admin_v3_Memory__fields[0],
+  &envoy_admin_v3_Memory__fields.fields[0],
   56, 6, kUpb_ExtMode_NonExtendable, 6, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.admin.v3.Memory",
 #endif
 };
 
-const upb_MiniTable* envoy__admin__v3__Memory_msg_init_ptr = &envoy__admin__v3__Memory_msg_init;
 static const upb_MiniTable *messages_layout[1] = {
   &envoy__admin__v3__Memory_msg_init,
 };

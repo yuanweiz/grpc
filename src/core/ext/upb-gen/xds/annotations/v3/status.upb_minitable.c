@@ -14,83 +14,90 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField xds_annotations_v3_FileStatusAnnotation__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} xds__annotations__v3__FileStatusAnnotation_msg_init_Fields;
+
+static const xds__annotations__v3__FileStatusAnnotation_msg_init_Fields xds_annotations_v3_FileStatusAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__annotations__v3__FileStatusAnnotation_msg_init = {
-  NULL,
-  &xds_annotations_v3_FileStatusAnnotation__fields[0],
+  &xds_annotations_v3_FileStatusAnnotation__fields.fields[0],
   16, 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.annotations.v3.FileStatusAnnotation",
 #endif
 };
 
-const upb_MiniTable* xds__annotations__v3__FileStatusAnnotation_msg_init_ptr = &xds__annotations__v3__FileStatusAnnotation_msg_init;
-static const upb_MiniTableField xds_annotations_v3_MessageStatusAnnotation__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} xds__annotations__v3__MessageStatusAnnotation_msg_init_Fields;
+
+static const xds__annotations__v3__MessageStatusAnnotation_msg_init_Fields xds_annotations_v3_MessageStatusAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__annotations__v3__MessageStatusAnnotation_msg_init = {
-  NULL,
-  &xds_annotations_v3_MessageStatusAnnotation__fields[0],
+  &xds_annotations_v3_MessageStatusAnnotation__fields.fields[0],
   16, 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.annotations.v3.MessageStatusAnnotation",
 #endif
 };
 
-const upb_MiniTable* xds__annotations__v3__MessageStatusAnnotation_msg_init_ptr = &xds__annotations__v3__MessageStatusAnnotation_msg_init;
-static const upb_MiniTableField xds_annotations_v3_FieldStatusAnnotation__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} xds__annotations__v3__FieldStatusAnnotation_msg_init_Fields;
+
+static const xds__annotations__v3__FieldStatusAnnotation_msg_init_Fields xds_annotations_v3_FieldStatusAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__annotations__v3__FieldStatusAnnotation_msg_init = {
-  NULL,
-  &xds_annotations_v3_FieldStatusAnnotation__fields[0],
+  &xds_annotations_v3_FieldStatusAnnotation__fields.fields[0],
   16, 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.annotations.v3.FieldStatusAnnotation",
 #endif
 };
 
-const upb_MiniTable* xds__annotations__v3__FieldStatusAnnotation_msg_init_ptr = &xds__annotations__v3__FieldStatusAnnotation_msg_init;
-static const upb_MiniTableField xds_annotations_v3_StatusAnnotation__fields[2] = {
+typedef struct {
+  upb_MiniTableField fields[2];
+} xds__annotations__v3__StatusAnnotation_msg_init_Fields;
+
+static const xds__annotations__v3__StatusAnnotation_msg_init_Fields xds_annotations_v3_StatusAnnotation__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {2, 12, 0, kUpb_NoSub, 5, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsAlternate | ((int)kUpb_FieldRep_4Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__annotations__v3__StatusAnnotation_msg_init = {
-  NULL,
-  &xds_annotations_v3_StatusAnnotation__fields[0],
+  &xds_annotations_v3_StatusAnnotation__fields.fields[0],
   16, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.annotations.v3.StatusAnnotation",
 #endif
 };
 
-const upb_MiniTable* xds__annotations__v3__StatusAnnotation_msg_init_ptr = &xds__annotations__v3__StatusAnnotation_msg_init;
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension xds_annotations_v3_file_status_ext = {
-  {226829418, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__FileOptions_msg_init,
+  {226829418, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &xds__annotations__v3__FileStatusAnnotation_msg_init},
+  &google__protobuf__FileOptions_msg_init,
 
 };
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension xds_annotations_v3_message_status_ext = {
-  {226829418, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__MessageOptions_msg_init,
+  {226829418, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &xds__annotations__v3__MessageStatusAnnotation_msg_init},
+  &google__protobuf__MessageOptions_msg_init,
 
 };
 UPB_LINKARR_APPEND(upb_AllExts)
 const upb_MiniTableExtension xds_annotations_v3_field_status_ext = {
-  {226829418, 0, 0, 0, 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
-  &google__protobuf__FieldOptions_msg_init,
+  {226829418, 0, 0, UPB_SIZE(3, 4), 11, (int)kUpb_FieldMode_Scalar | (int)kUpb_LabelFlags_IsExtension | ((int)UPB_SIZE(kUpb_FieldRep_4Byte, kUpb_FieldRep_8Byte) << kUpb_FieldRep_Shift)},
   {.UPB_PRIVATE(submsg) = &xds__annotations__v3__FieldStatusAnnotation_msg_init},
+  &google__protobuf__FieldOptions_msg_init,
 
 };
 static const upb_MiniTable *messages_layout[4] = {

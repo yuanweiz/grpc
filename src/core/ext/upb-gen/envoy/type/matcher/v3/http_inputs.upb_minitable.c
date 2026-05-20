@@ -15,77 +15,86 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField envoy_type_matcher_v3_HttpRequestHeaderMatchInput__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init_Fields;
+
+static const envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init_Fields envoy_type_matcher_v3_HttpRequestHeaderMatchInput__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init = {
-  NULL,
-  &envoy_type_matcher_v3_HttpRequestHeaderMatchInput__fields[0],
+  &envoy_type_matcher_v3_HttpRequestHeaderMatchInput__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.type.matcher.v3.HttpRequestHeaderMatchInput",
 #endif
 };
 
-const upb_MiniTable* envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init_ptr = &envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init;
-static const upb_MiniTableField envoy_type_matcher_v3_HttpRequestTrailerMatchInput__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init_Fields;
+
+static const envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init_Fields envoy_type_matcher_v3_HttpRequestTrailerMatchInput__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init = {
-  NULL,
-  &envoy_type_matcher_v3_HttpRequestTrailerMatchInput__fields[0],
+  &envoy_type_matcher_v3_HttpRequestTrailerMatchInput__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.type.matcher.v3.HttpRequestTrailerMatchInput",
 #endif
 };
 
-const upb_MiniTable* envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init_ptr = &envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init;
-static const upb_MiniTableField envoy_type_matcher_v3_HttpResponseHeaderMatchInput__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__type__matcher__v3__HttpResponseHeaderMatchInput_msg_init_Fields;
+
+static const envoy__type__matcher__v3__HttpResponseHeaderMatchInput_msg_init_Fields envoy_type_matcher_v3_HttpResponseHeaderMatchInput__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__type__matcher__v3__HttpResponseHeaderMatchInput_msg_init = {
-  NULL,
-  &envoy_type_matcher_v3_HttpResponseHeaderMatchInput__fields[0],
+  &envoy_type_matcher_v3_HttpResponseHeaderMatchInput__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.type.matcher.v3.HttpResponseHeaderMatchInput",
 #endif
 };
 
-const upb_MiniTable* envoy__type__matcher__v3__HttpResponseHeaderMatchInput_msg_init_ptr = &envoy__type__matcher__v3__HttpResponseHeaderMatchInput_msg_init;
-static const upb_MiniTableField envoy_type_matcher_v3_HttpResponseTrailerMatchInput__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__type__matcher__v3__HttpResponseTrailerMatchInput_msg_init_Fields;
+
+static const envoy__type__matcher__v3__HttpResponseTrailerMatchInput_msg_init_Fields envoy_type_matcher_v3_HttpResponseTrailerMatchInput__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__type__matcher__v3__HttpResponseTrailerMatchInput_msg_init = {
-  NULL,
-  &envoy_type_matcher_v3_HttpResponseTrailerMatchInput__fields[0],
+  &envoy_type_matcher_v3_HttpResponseTrailerMatchInput__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.type.matcher.v3.HttpResponseTrailerMatchInput",
 #endif
 };
 
-const upb_MiniTable* envoy__type__matcher__v3__HttpResponseTrailerMatchInput_msg_init_ptr = &envoy__type__matcher__v3__HttpResponseTrailerMatchInput_msg_init;
-static const upb_MiniTableField envoy_type_matcher_v3_HttpRequestQueryParamMatchInput__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} envoy__type__matcher__v3__HttpRequestQueryParamMatchInput_msg_init_Fields;
+
+static const envoy__type__matcher__v3__HttpRequestQueryParamMatchInput_msg_init_Fields envoy_type_matcher_v3_HttpRequestQueryParamMatchInput__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__type__matcher__v3__HttpRequestQueryParamMatchInput_msg_init = {
-  NULL,
-  &envoy_type_matcher_v3_HttpRequestQueryParamMatchInput__fields[0],
+  &envoy_type_matcher_v3_HttpRequestQueryParamMatchInput__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.type.matcher.v3.HttpRequestQueryParamMatchInput",
 #endif
 };
 
-const upb_MiniTable* envoy__type__matcher__v3__HttpRequestQueryParamMatchInput_msg_init_ptr = &envoy__type__matcher__v3__HttpRequestQueryParamMatchInput_msg_init;
 static const upb_MiniTable *messages_layout[5] = {
   &envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init,
   &envoy__type__matcher__v3__HttpRequestTrailerMatchInput_msg_init,

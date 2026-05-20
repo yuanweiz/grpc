@@ -14,23 +14,24 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField envoy_config_core_v3_CelExpressionConfig__fields[3] = {
+typedef struct {
+  upb_MiniTableField fields[3];
+} envoy__config__core__v3__CelExpressionConfig_msg_init_Fields;
+
+static const envoy__config__core__v3__CelExpressionConfig_msg_init_Fields envoy_config_core_v3_CelExpressionConfig__fields = {{
   {1, 8, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {2, 9, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
   {3, 10, 0, kUpb_NoSub, 8, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_1Byte << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable envoy__config__core__v3__CelExpressionConfig_msg_init = {
-  NULL,
-  &envoy_config_core_v3_CelExpressionConfig__fields[0],
+  &envoy_config_core_v3_CelExpressionConfig__fields.fields[0],
   16, 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "envoy.config.core.v3.CelExpressionConfig",
 #endif
 };
 
-const upb_MiniTable* envoy__config__core__v3__CelExpressionConfig_msg_init_ptr = &envoy__config__core__v3__CelExpressionConfig_msg_init;
 static const upb_MiniTable *messages_layout[1] = {
   &envoy__config__core__v3__CelExpressionConfig_msg_init,
 };

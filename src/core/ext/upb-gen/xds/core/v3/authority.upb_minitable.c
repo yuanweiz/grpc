@@ -15,21 +15,22 @@
 // Must be last.
 #include "upb/port/def.inc"
 
-extern const struct upb_MiniTable UPB_PRIVATE(_kUpb_MiniTable_StaticallyTreeShaken);
-static const upb_MiniTableField xds_core_v3_Authority__fields[1] = {
+typedef struct {
+  upb_MiniTableField fields[1];
+} xds__core__v3__Authority_msg_init_Fields;
+
+static const xds__core__v3__Authority_msg_init_Fields xds_core_v3_Authority__fields = {{
   {1, 8, 0, kUpb_NoSub, 9, (int)kUpb_FieldMode_Scalar | ((int)kUpb_FieldRep_StringView << kUpb_FieldRep_Shift)},
-};
+}};
 
 const upb_MiniTable xds__core__v3__Authority_msg_init = {
-  NULL,
-  &xds_core_v3_Authority__fields[0],
+  &xds_core_v3_Authority__fields.fields[0],
   UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "xds.core.v3.Authority",
 #endif
 };
 
-const upb_MiniTable* xds__core__v3__Authority_msg_init_ptr = &xds__core__v3__Authority_msg_init;
 static const upb_MiniTable *messages_layout[1] = {
   &xds__core__v3__Authority_msg_init,
 };
