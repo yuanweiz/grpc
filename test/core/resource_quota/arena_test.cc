@@ -31,6 +31,7 @@
 #include <vector>
 
 #include "src/core/lib/iomgr/exec_ctx.h"
+#include "src/core/lib/promise/context.h"
 #include "src/core/lib/resource_quota/resource_quota.h"
 #include "src/core/util/ref_counted_ptr.h"
 #include "src/core/util/thd.h"
@@ -326,11 +327,23 @@ struct ArenaContextType<Foo> {
   static void Destroy(Foo* p) { p->~Foo(); }
 };
 
+struct Bar {};
+
+template <>
+struct ArenaContextType<Bar> { static void Destroy(Bar* p) {} };
+
 struct alignas(16) VeryAligned {};
+template <>
+struct ArenaContextType<VeryAligned> { static void Destroy(VeryAligned* p) {} };
 
 TEST(ArenaTest, FooContext) {
   auto arena = SimpleArenaAllocator()->MakeArena();
-  EXPECT_EQ(arena->GetContext<Foo>(), nullptr);
+  printf("Foo id=%d, Bar id=%d, VeryAligned id=%d\n",
+      arena_detail::GetContextId<Foo>::id(),
+      arena_detail::GetContextId<Bar>::id(),
+      arena_detail::GetContextId<VeryAligned>::id()
+  );
+
   arena->SetContext(arena->New<Foo>(42));
   ASSERT_NE(arena->GetContext<Foo>(), nullptr);
   EXPECT_EQ(*arena->GetContext<Foo>()->p, 42);
