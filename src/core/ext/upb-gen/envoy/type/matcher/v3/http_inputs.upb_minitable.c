@@ -15,6 +15,7 @@
 // Must be last.
 #include "upb/port/def.inc"
 
+extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 typedef struct {
   upb_MiniTableField fields[1];
 } envoy__type__matcher__v3__HttpRequestHeaderMatchInput_msg_init_Fields;

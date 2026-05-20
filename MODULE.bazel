@@ -63,7 +63,7 @@ bazel_dep(name = "protobuf", version = "33.5", repo_name = "com_google_protobuf"
 # )
 _GOOD="7eef275fa4dcb3cb0d61a1e909330e820229c964"
 _BAD="01331f9e51775b7e11f8b61d778ea98ddb522ad1"
-_COMMIT=_GOOD
+_COMMIT=_BAD
 archive_override(
     module_name = "protobuf",
     strip_prefix = "protobuf-{}".format(_COMMIT),

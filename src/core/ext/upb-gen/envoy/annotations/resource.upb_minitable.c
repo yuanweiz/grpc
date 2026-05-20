@@ -14,6 +14,7 @@
 // Must be last.
 #include "upb/port/def.inc"
 
+extern const UPB_PRIVATE(upb_GeneratedExtensionListEntry)* UPB_PRIVATE(upb_generated_extension_list);
 typedef struct {
   upb_MiniTableField fields[1];
 } envoy__annotations__ResourceAnnotation_msg_init_Fields;
@@ -46,6 +47,20 @@ static const upb_MiniTableExtension *extensions_layout[1] = {
   &envoy_annotations_resource_ext,
 };
 
+UPB_LINKARR_DECLARE(upb_AllExts, const upb_MiniTableExtension);
+UPB_CONSTRUCTOR(upb_GeneratedRegistry_Constructor, envoy_annotations_resource_proto_ext_constructor) {
+  static bool finished = false;
+  if (finished) return;
+  finished = true;
+  static UPB_PRIVATE(upb_GeneratedExtensionListEntry) entry = {
+    UPB_LINKARR_START(upb_AllExts),
+    UPB_LINKARR_STOP(upb_AllExts),
+    NULL
+  };
+  UPB_ASSERT(entry.next == NULL);
+  entry.next = UPB_PRIVATE(upb_generated_extension_list);
+  UPB_PRIVATE(upb_generated_extension_list) = &entry;
+}
 const upb_MiniTableFile envoy_annotations_resource_proto_upb_file_layout = {
   messages_layout,
   NULL,
