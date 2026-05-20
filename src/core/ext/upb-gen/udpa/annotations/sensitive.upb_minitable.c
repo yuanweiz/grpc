@@ -27,20 +27,6 @@ static const upb_MiniTableExtension *extensions_layout[1] = {
   &udpa_annotations_sensitive_ext,
 };
 
-UPB_LINKARR_DECLARE(upb_AllExts, const upb_MiniTableExtension);
-UPB_CONSTRUCTOR(upb_GeneratedRegistry_Constructor, udpa_annotations_sensitive_proto_ext_constructor) {
-  static bool finished = false;
-  if (finished) return;
-  finished = true;
-  static UPB_PRIVATE(upb_GeneratedExtensionListEntry) entry = {
-    UPB_LINKARR_START(upb_AllExts),
-    UPB_LINKARR_STOP(upb_AllExts),
-    NULL
-  };
-  UPB_ASSERT(entry.next == NULL);
-  entry.next = UPB_PRIVATE(upb_generated_extension_list);
-  UPB_PRIVATE(upb_generated_extension_list) = &entry;
-}
 const upb_MiniTableFile udpa_annotations_sensitive_proto_upb_file_layout = {
   NULL,
   NULL,
