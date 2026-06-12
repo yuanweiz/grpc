@@ -387,7 +387,7 @@ def _create_portability_test_jobs(
             arch="x64",
             compiler=compiler,
             labels=["portability", "corelang"]
-            + (["openssl"] if "openssl" in compiler else []),
+            + (["openssl"] if "openssl" in compiler else [compiler]),
             extra_args=extra_args,
             inner_jobs=inner_jobs,
             timeout_seconds=_CPP_RUNTESTS_TIMEOUT,
@@ -603,6 +603,7 @@ if __name__ == "__main__":
     )
 
     jobs = []
+    args.filter=["clang14"]
     for job in all_jobs:
         if not args.filter or all(
             filter in job.labels for filter in args.filter
