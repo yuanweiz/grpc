@@ -19,6 +19,7 @@
 #
 # This script should be run each time bazel dependencies are updated.
 
+PS4='+ $(date "+[%H:%M:%S %Z]")\011 '
 set -e
 
 cd $(dirname $0)/..
@@ -54,7 +55,7 @@ function _upload() {
     return 0
   fi
 
-  echo "Uploading https://${uri} to https://storage.googleapis.com/grpc-bazel-mirror/${dst_path}"
+  echo "Uploading https://${uri} to https://storage.googleapis.com/grpc-bazel-mirror/${dst_path} (${success} succeeded, ${failure} failed)."
   gcloud storage cp "${tmpdir}/archive" "gs://grpc-bazel-mirror/${dst_path}"
 
   rm -rf "${tmpdir}/archive"
