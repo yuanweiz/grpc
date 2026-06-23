@@ -42,7 +42,7 @@ function _upload() {
     dst_path="${dst_path%/download}"
   fi
 
-  if gcloud storage objects list --stat --fetch-encrypted-object-hashes "gs://grpc-bazel-mirror/${uri}" > /dev/null; then
+  if gcloud storage objects list --stat "gs://grpc-bazel-mirror/${uri}" > /dev/null; then
     echo "Skipping ${uri}"
     return 0
   fi
