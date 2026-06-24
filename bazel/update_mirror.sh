@@ -20,7 +20,7 @@
 # This script should be run each time bazel dependencies are updated.
 
 PS4='+ $(date "+[%H:%M:%S %Z]") $LINENO:\011'
-set -e
+set -ex
 
 cd $(dirname $0)/..
 
