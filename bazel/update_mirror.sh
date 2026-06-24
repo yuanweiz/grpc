@@ -53,9 +53,8 @@ function _download() {
   curl -L --fail --create-dirs --output "${local_path}" "${uri}"
 
   if [[ ! -s "${local_path}" ]]; then
-    echo "Failed to download https://${uri}: zero bytes returned"
-    rm "${local_path}"
-    return 0
+    echo "Failed to download ${uri}: zero bytes returned"
+    return 1
   fi
 }
 
