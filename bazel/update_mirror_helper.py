@@ -19,7 +19,26 @@ import logging
 import json
 import re
 
-_MIRROR_SITE_PATTERN = "https://storage.googleapis.com/grpc-bazel-mirror"
+_EXCLUDE_PATTERNS = set(
+    [
+        # Our own mirror site
+        "https://storage.googleapis.com/grpc-bazel-mirror",
+        # These URLs return 404 when we curl(1) them.
+        # Skipping should be fine because they're typically accompanied by other site(s)
+        # that hosts the same file, we can mirror those sites instead.
+        #
+        # Example:
+        #
+        # http_file(
+        #     name = "rules_jvm_external++maven+com_fasterxml_jackson_core_jackson_core_sources_2_17_1",
+        #     _original_name = "com_fasterxml_jackson_core_jackson_core_sources_2_17_1",
+        #     downloaded_file_path = "v1/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1-sources.jar",
+        #     sha256 = "c2c97a708be197aae5fee64dcc8b5e8a09c76c79a44c0e8e5b48b235084ec395",
+        #     urls = ["https://repo.gradle.org/gradle/libs-releases/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1-sources.jar", "https://repo1.maven.org/maven2/com/fasterxml/jackson/core/jackson-core/2.17.1/jackson-core-2.17.1-sources.jar"],
+        # )
+        "https://repo.gradle.org/gradle/libs-releases",
+    ]
+)
 _SUPPORTED_RULE_KINDS = [
     "http_archive",
     "http_file",
@@ -36,6 +55,10 @@ _BAZEL_URLS = [
 ]
 
 logger = logging.getLogger(__name__)
+
+
+def should_include(url):
+    return not any([pattern in url for pattern in _EXCLUDE_PATTERNS])
 
 
 def parse_ndjson(file_path):
@@ -129,7 +152,7 @@ def main():
         )
     )
     urls_to_upload = sorted(
-        [url for url in urls - existing_urls if _MIRROR_SITE_PATTERN not in url]
+        [url for url in urls - existing_urls if should_include(url)]
     )
     output = "\n".join(urls_to_upload)
     with open(args.output_file, "w") as file:

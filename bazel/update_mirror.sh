@@ -73,6 +73,7 @@ function rsync_archives() {
   gcloud storage rsync --recursive "${archive_dir}/" gs://grpc-bazel-mirror/
 }
 
+# Download everything into a temporary folder and perform rsync in one go.
 function upload_deps {
   local bzlmod_deps_file=${tmpdir}/bzlmod_deps.ndjson
   local output_file=${tmpdir}/urls_to_upload.txt
@@ -89,15 +90,12 @@ function upload_deps {
 
   while read -r url; do
       case "$url" in
-          *grpc-bazel-mirror*)
-            echo "Skipping URL from mirror site: ${url}"
-            ;;
           *github.com*)
-            echo "Uploading archive from github.com: ${url}"
+            echo "Downloading archive from github.com: ${url}"
             download "${url}"
             ;;
           *)
-            echo "Uploading archive from non-github site: ${url}"
+            echo "Downloading archive from non-github site: ${url}"
             download "${url}"
             ;;
       esac
