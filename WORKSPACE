@@ -123,3 +123,12 @@ bind(
     name = "madler_zlib",
     actual = "@zlib//:zlib",
 )
+
+http_archive(
+    name = "grpc_proto",
+    sha256 = "641aaecf274cbbaad895f32eb5fbb6dc0fdbbf782c5f1110022f1837fc90989d",
+    strip_prefix = "grpc-proto-0.0.0-20240627-ec30f58",
+    urls = [
+        "https://github.com/grpc/grpc-proto/archive/ec30f583e7ff53edee9191e4ab6e6259cead2dd8.tar.gz",
+    ],
+)

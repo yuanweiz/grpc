@@ -76,7 +76,7 @@ popd
 @rem folder for deinit-ed submodules, blocking the CMake download. For users
 @rem downloaded gRPC code as an archive, they won't have submodule residual
 @rem folders, like the following command trying to imitate.
-git submodule foreach bash -c "cd $toplevel; rm -rf $name"
+git submodule foreach bash -c "if [ \"$name\" != \"third_party/grpc-proto\" ]; then cd $toplevel; rm -rf $name; fi"
 
 @rem Install gRPC
 @rem NOTE(jtattermusch): The -DProtobuf_USE_STATIC_LIBS=ON is necessary on cmake3.16+

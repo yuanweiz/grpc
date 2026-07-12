@@ -78,7 +78,7 @@ popd
 # Get list of submodules from the .gitmodules file since for "git submodule foreach"
 # we'd need to be in a git workspace (and that's not the case when running
 # distribtests as a bazel action)
-grep 'path = ' .gitmodules | sed 's/^.*path = //' | xargs rm -rf
+grep 'path = ' .gitmodules | sed 's/^.*path = //' | grep -v 'third_party/grpc-proto' | xargs rm -rf
 
 # Install gRPC
 # TODO(jtattermusch): avoid the need for setting utf8_range_DIR
