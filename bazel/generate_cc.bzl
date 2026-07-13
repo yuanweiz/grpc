@@ -51,9 +51,11 @@ def _strip_package_from_path(label_package, file):
     if not path.startswith(label_package + "/"):
         if label_package.startswith("src/proto/"):
             alt_package = label_package[len("src/proto/"):]
-            idx = path.find(alt_package + "/")
+            if path.startswith(alt_package + "/"):
+                return path[len(alt_package + "/"):]
+            idx = path.find("/" + alt_package + "/")
             if idx != -1:
-                return path[idx + len(alt_package + "/"):]
+                return path[idx + len("/" + alt_package + "/"):]
         fail("'{}' does not lie within '{}'.".format(path, label_package))
     return path[len(label_package + "/"):]
 

@@ -126,9 +126,9 @@ bind(
 
 http_archive(
     name = "grpc_proto",
-    sha256 = "641aaecf274cbbaad895f32eb5fbb6dc0fdbbf782c5f1110022f1837fc90989d",
-    strip_prefix = "grpc-proto-0.0.0-20240627-ec30f58",
+    sha256 = "5e9b520b22afbd53a662cc29017064be253c1dfa6df8958738594e7fec6ade33",
+    strip_prefix = "grpc-proto-ec30f589e2519d595688b9a42f88a91bdd6b733f",
     urls = [
-        "https://github.com/grpc/grpc-proto/archive/ec30f583e7ff53edee9191e4ab6e6259cead2dd8.tar.gz",
+        "https://github.com/grpc/grpc-proto/archive/ec30f589e2519d595688b9a42f88a91bdd6b733f.tar.gz",
     ],
 )
