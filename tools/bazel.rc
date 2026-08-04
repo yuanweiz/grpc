@@ -176,3 +176,6 @@ build --@io_opentelemetry_cpp//api:with_abseil
 
 # Custom checks
 test:postmortem --//:postmortem_checks=true
+
+build --override_module=protobuf=/usr/local/google/home/weizheyuan/grpc/third_party/protobuf
+query --override_module=protobuf=/usr/local/google/home/weizheyuan/grpc/third_party/protobuf

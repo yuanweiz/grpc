@@ -40,10 +40,20 @@ static const grpc__channelz__v1__Channel_msg_init_Fields grpc_channelz_v1_Channe
 
 const upb_MiniTable grpc__channelz__v1__Channel_msg_init = {
   &grpc_channelz_v1_Channel__fields.fields[0],
-  UPB_SIZE(32, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(32, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(56), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Channel",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000008000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0018000001090012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x002000003f0a001a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x002800003f0b0022, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x003000003f0c002a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+  })
 };
 
 typedef struct {
@@ -68,10 +78,20 @@ static const grpc__channelz__v1__Subchannel_msg_init_Fields grpc_channelz_v1_Sub
 
 const upb_MiniTable grpc__channelz__v1__Subchannel_msg_init = {
   &grpc_channelz_v1_Subchannel__fields.fields[0],
-  UPB_SIZE(32, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(32, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(56), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Subchannel",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000008000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0018000001090012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x002000003f0a001a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x002800003f0b0022, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x003000003f0c002a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+  })
 };
 
 typedef struct {
@@ -89,7 +109,7 @@ const upb_MiniTable grpc__channelz__v1__ChannelConnectivityState_msg_init = {
   "grpc.channelz.v1.ChannelConnectivityState",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
   })
 };
@@ -121,14 +141,14 @@ const upb_MiniTable grpc__channelz__v1__ChannelData_msg_init = {
   "grpc.channelz.v1.ChannelData",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x00200000000b000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
     {0x001000003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x00280000010c001a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
     {0x003000003f000020, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x003800003f000028, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x004000003f000030, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x00480000020d003a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
   })
 };
 
@@ -152,15 +172,19 @@ static const grpc__channelz__v1__ChannelTraceEvent_msg_init_Fields grpc_channelz
 
 const upb_MiniTable grpc__channelz__v1__ChannelTraceEvent_msg_init = {
   &grpc_channelz_v1_ChannelTraceEvent__fields.fields[0],
-  UPB_SIZE(40, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(24), 0,
+  UPB_SIZE(40, 56), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(56), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.ChannelTraceEvent",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001800003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x000c00003f000010, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x002800000008001a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0030001004090022, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x00300010050a002a, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -181,13 +205,15 @@ static const grpc__channelz__v1__ChannelTrace_msg_init_Fields grpc_channelz_v1_C
 
 const upb_MiniTable grpc__channelz__v1__ChannelTrace_msg_init = {
   &grpc_channelz_v1_ChannelTrace__fields.fields[0],
-  UPB_SIZE(32, 40), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(8), 0,
+  UPB_SIZE(32, 40), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.ChannelTrace",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
+    {0x0018000000050012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x002000003f06001a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
   })
 };
 
@@ -207,10 +233,10 @@ const upb_MiniTable grpc__channelz__v1__ChannelRef_msg_init = {
   "grpc.channelz.v1.ChannelRef",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x000800003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -230,22 +256,22 @@ const upb_MiniTable grpc__channelz__v1__SubchannelRef_msg_init = {
   "grpc.channelz.v1.SubchannelRef",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001800003f000038, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x000800003f000042, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -265,14 +291,14 @@ const upb_MiniTable grpc__channelz__v1__SocketRef_msg_init = {
   "grpc.channelz.v1.SocketRef",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001800003f000018, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x000800003f000022, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -292,14 +318,14 @@ const upb_MiniTable grpc__channelz__v1__ServerRef_msg_init = {
   "grpc.channelz.v1.ServerRef",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001800003f000028, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x000800003f000032, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -321,10 +347,16 @@ static const grpc__channelz__v1__Server_msg_init_Fields grpc_channelz_v1_Server_
 
 const upb_MiniTable grpc__channelz__v1__Server_msg_init = {
   &grpc_channelz_v1_Server__fields.fields[0],
-  UPB_SIZE(24, 40), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(24, 40), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Server",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000005000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0018000001060012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x002000003f07001a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -351,14 +383,14 @@ const upb_MiniTable grpc__channelz__v1__ServerData_msg_init = {
   "grpc.channelz.v1.ServerData",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000008000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
     {0x001800003f000010, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x002000003f000018, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x002800003f000020, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x003000000109002a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -390,14 +422,14 @@ const upb_MiniTable grpc__channelz__v1__Socket_msg_init = {
   "grpc.channelz.v1.Socket",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x002000000009000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x00280000010a0012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x00300000020b001a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x00380000030c0022, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x00400000040d002a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
     {0x001000003f000032, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -433,19 +465,27 @@ static const grpc__channelz__v1__SocketData_msg_init_Fields grpc_channelz_v1_Soc
 
 const upb_MiniTable grpc__channelz__v1__SocketData_msg_init = {
   &grpc_channelz_v1_SocketData__fields.fields[0],
-  UPB_SIZE(88, 120), 13, kUpb_ExtMode_NonExtendable, 13, UPB_FASTTABLE_MASK(56), 0,
+  UPB_SIZE(88, 120), 13, kUpb_ExtMode_NonExtendable, 13, UPB_FASTTABLE_MASK(120), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.SocketData",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x001800003f000010, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x002000003f000018, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x002800003f000020, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x003000003f000028, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x003800003f000030, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x004000000014003a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0048000001150042, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x005000000216004a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0058000003170052, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x006000000418005a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0068000005190062, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x007000003f1a006a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -467,10 +507,16 @@ static const grpc__channelz__v1__Address_msg_init_Fields grpc_channelz_v1_Addres
 
 const upb_MiniTable grpc__channelz__v1__Address_msg_init = {
   &grpc_channelz_v1_Address__fields.fields[0],
-  UPB_SIZE(16, 24), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 3, kUpb_ExtMode_NonExtendable, 3, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Address",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000080105000a, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x0010000802060012, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x001000080307001a, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -489,10 +535,10 @@ const upb_MiniTable grpc__channelz__v1__Address__TcpIpAddress_msg_init = {
   "grpc.channelz.v1.Address.TcpIpAddress",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f00000a, &upb_DecodeFast_Bytes_Scalar_Tag1Byte},
     {0x000800003f000010, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -511,7 +557,7 @@ const upb_MiniTable grpc__channelz__v1__Address__UdsAddress_msg_init = {
   "grpc.channelz.v1.Address.UdsAddress",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
   })
 };
@@ -531,13 +577,15 @@ static const grpc__channelz__v1__Address__OtherAddress_msg_init_Fields grpc_chan
 
 const upb_MiniTable grpc__channelz__v1__Address__OtherAddress_msg_init = {
   &grpc_channelz_v1_Address_OtherAddress__fields.fields[0],
-  UPB_SIZE(24, 40), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(8), 0,
+  UPB_SIZE(24, 40), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Address.OtherAddress",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
+    {0x0020000000030012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -557,10 +605,16 @@ static const grpc__channelz__v1__Security_msg_init_Fields grpc_channelz_v1_Secur
 
 const upb_MiniTable grpc__channelz__v1__Security_msg_init = {
   &grpc_channelz_v1_Security__fields.fields[0],
-  UPB_SIZE(16, 24), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Security",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000080103000a, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x0010000802040012, &upb_DecodeFast_Message_Oneof_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+  })
 };
 
 typedef struct {
@@ -581,14 +635,14 @@ const upb_MiniTable grpc__channelz__v1__Security__Tls_msg_init = {
   "grpc.channelz.v1.Security.Tls",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x003000080100000a, &upb_DecodeFast_String_Oneof_Tag1Byte},
     {0x0030000802000012, &upb_DecodeFast_String_Oneof_Tag1Byte},
     {0x001000003f00001a, &upb_DecodeFast_Bytes_Scalar_Tag1Byte},
     {0x002000003f000022, &upb_DecodeFast_Bytes_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -607,13 +661,15 @@ static const grpc__channelz__v1__Security__OtherSecurity_msg_init_Fields grpc_ch
 
 const upb_MiniTable grpc__channelz__v1__Security__OtherSecurity_msg_init = {
   &grpc_channelz_v1_Security_OtherSecurity__fields.fields[0],
-  UPB_SIZE(24, 40), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(8), 0,
+  UPB_SIZE(24, 40), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.Security.OtherSecurity",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
+    {0x0020000000030012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -638,10 +694,10 @@ const upb_MiniTable grpc__channelz__v1__SocketOption_msg_init = {
   "grpc.channelz.v1.SocketOption",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x002000003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x003000000005001a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
   })
 };
 
@@ -659,10 +715,14 @@ static const grpc__channelz__v1__SocketOptionTimeout_msg_init_Fields grpc_channe
 
 const upb_MiniTable grpc__channelz__v1__SocketOptionTimeout_msg_init = {
   &grpc_channelz_v1_SocketOptionTimeout__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.SocketOptionTimeout",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -680,13 +740,15 @@ static const grpc__channelz__v1__SocketOptionLinger_msg_init_Fields grpc_channel
 
 const upb_MiniTable grpc__channelz__v1__SocketOptionLinger_msg_init = {
   &grpc_channelz_v1_SocketOptionLinger__fields.fields[0],
-  UPB_SIZE(16, 24), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(8), 0,
+  UPB_SIZE(16, 24), 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.SocketOptionLinger",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000900003f000008, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
+    {0x0010000000030012, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -733,7 +795,7 @@ const upb_MiniTable grpc__channelz__v1__SocketOptionTcpInfo_msg_init = {
   "grpc.channelz.v1.SocketOptionTcpInfo",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
     {0x000c00003f000010, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
     {0x001000003f000018, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
@@ -763,8 +825,8 @@ const upb_MiniTable grpc__channelz__v1__SocketOptionTcpInfo_msg_init = {
     {0x007000003f0001d8, &upb_DecodeFast_Varint32_Scalar_Tag2Byte},
     {0x007400003f0001e0, &upb_DecodeFast_Varint32_Scalar_Tag2Byte},
     {0x007800003f0001e8, &upb_DecodeFast_Varint32_Scalar_Tag2Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -784,10 +846,10 @@ const upb_MiniTable grpc__channelz__v1__GetTopChannelsRequest_msg_init = {
   "grpc.channelz.v1.GetTopChannelsRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x001000003f000010, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -811,10 +873,10 @@ const upb_MiniTable grpc__channelz__v1__GetTopChannelsResponse_msg_init = {
   "grpc.channelz.v1.GetTopChannelsResponse",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000003f03000a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
     {0x000800003f000010, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -834,10 +896,10 @@ const upb_MiniTable grpc__channelz__v1__GetServersRequest_msg_init = {
   "grpc.channelz.v1.GetServersRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x001000003f000010, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -861,10 +923,10 @@ const upb_MiniTable grpc__channelz__v1__GetServersResponse_msg_init = {
   "grpc.channelz.v1.GetServersResponse",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000003f03000a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
     {0x000800003f000010, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -883,7 +945,7 @@ const upb_MiniTable grpc__channelz__v1__GetServerRequest_msg_init = {
   "grpc.channelz.v1.GetServerRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
   })
 };
@@ -902,10 +964,14 @@ static const grpc__channelz__v1__GetServerResponse_msg_init_Fields grpc_channelz
 
 const upb_MiniTable grpc__channelz__v1__GetServerResponse_msg_init = {
   &grpc_channelz_v1_GetServerResponse__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.GetServerResponse",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -925,7 +991,7 @@ const upb_MiniTable grpc__channelz__v1__GetServerSocketsRequest_msg_init = {
   "grpc.channelz.v1.GetServerSocketsRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x001000003f000010, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x001800003f000018, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
@@ -952,10 +1018,10 @@ const upb_MiniTable grpc__channelz__v1__GetServerSocketsResponse_msg_init = {
   "grpc.channelz.v1.GetServerSocketsResponse",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000003f03000a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
     {0x000800003f000010, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -974,7 +1040,7 @@ const upb_MiniTable grpc__channelz__v1__GetChannelRequest_msg_init = {
   "grpc.channelz.v1.GetChannelRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
   })
 };
@@ -993,10 +1059,14 @@ static const grpc__channelz__v1__GetChannelResponse_msg_init_Fields grpc_channel
 
 const upb_MiniTable grpc__channelz__v1__GetChannelResponse_msg_init = {
   &grpc_channelz_v1_GetChannelResponse__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.GetChannelResponse",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -1014,7 +1084,7 @@ const upb_MiniTable grpc__channelz__v1__GetSubchannelRequest_msg_init = {
   "grpc.channelz.v1.GetSubchannelRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
   })
 };
@@ -1033,10 +1103,14 @@ static const grpc__channelz__v1__GetSubchannelResponse_msg_init_Fields grpc_chan
 
 const upb_MiniTable grpc__channelz__v1__GetSubchannelResponse_msg_init = {
   &grpc_channelz_v1_GetSubchannelResponse__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.GetSubchannelResponse",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -1055,10 +1129,10 @@ const upb_MiniTable grpc__channelz__v1__GetSocketRequest_msg_init = {
   "grpc.channelz.v1.GetSocketRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f000008, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x000800003f000010, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -1076,13 +1150,17 @@ static const grpc__channelz__v1__GetSocketResponse_msg_init_Fields grpc_channelz
 
 const upb_MiniTable grpc__channelz__v1__GetSocketResponse_msg_init = {
   &grpc_channelz_v1_GetSocketResponse__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.channelz.v1.GetSocketResponse",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
-static const upb_MiniTable *messages_layout[39] = {
+static const upb_MiniTable *messages_layout_src_proto_grpc_channelz_channelz_proto_upb_file_layout[39] = {
   &grpc__channelz__v1__Channel_msg_init,
   &grpc__channelz__v1__Subchannel_msg_init,
   &grpc__channelz__v1__ChannelConnectivityState_msg_init,
@@ -1125,7 +1203,7 @@ static const upb_MiniTable *messages_layout[39] = {
 };
 
 const upb_MiniTableFile src_proto_grpc_channelz_channelz_proto_upb_file_layout = {
-  messages_layout,
+  messages_layout_src_proto_grpc_channelz_channelz_proto_upb_file_layout,
   NULL,
   NULL,
   39,

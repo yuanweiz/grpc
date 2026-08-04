@@ -29,7 +29,7 @@ const upb_MiniTable grpc__health__v1__HealthCheckRequest_msg_init = {
   "grpc.health.v1.HealthCheckRequest",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
   })
 };
@@ -49,18 +49,18 @@ const upb_MiniTable grpc__health__v1__HealthCheckResponse_msg_init = {
   "grpc.health.v1.HealthCheckResponse",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f000008, &upb_DecodeFast_Varint32_Scalar_Tag1Byte},
   })
 };
 
-static const upb_MiniTable *messages_layout[2] = {
+static const upb_MiniTable *messages_layout_src_proto_grpc_health_v1_health_proto_upb_file_layout[2] = {
   &grpc__health__v1__HealthCheckRequest_msg_init,
   &grpc__health__v1__HealthCheckResponse_msg_init,
 };
 
 const upb_MiniTableFile src_proto_grpc_health_v1_health_proto_upb_file_layout = {
-  messages_layout,
+  messages_layout_src_proto_grpc_health_v1_health_proto_upb_file_layout,
   NULL,
   NULL,
   2,

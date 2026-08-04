@@ -5758,6 +5758,7 @@ WELL_KNOWN_PROTO_TARGETS = [
     "any",
     "duration",
     "empty",
+    "json_enumvalue_options",
     "struct",
     "timestamp",
     "wrappers",

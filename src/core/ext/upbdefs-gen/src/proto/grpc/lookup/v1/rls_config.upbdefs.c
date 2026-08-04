@@ -13,7 +13,7 @@
 
 extern _upb_DefPool_Init google_protobuf_duration_proto_upbdefinit;
 
-static const char descriptor[1816] = {
+static const char descriptor_src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit[1816] = {
     '\n', ')', 's', 'r', 'c', '/', 'p', 'r', 'o', 't', 'o', '/',
     'g', 'r', 'p', 'c', '/', 'l', 'o', 'o', 'k', 'u', 'p', '/',
     'v', '1', '/', 'r', 'l', 's', '_', 'c', 'o', 'n', 'f', 'i',
@@ -168,14 +168,15 @@ static const char descriptor[1816] = {
     'o', 't', 'o', '3',
 };
 
-static _upb_DefPool_Init *deps[2] = {
+static _upb_DefPool_Init* deps_src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit[2] = {
     &google_protobuf_duration_proto_upbdefinit,
     NULL,
 };
 
 _upb_DefPool_Init src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit = {
-    deps,
+    deps_src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit,
     &src_proto_grpc_lookup_v1_rls_config_proto_upb_file_layout,
     "src/proto/grpc/lookup/v1/rls_config.proto",
-    UPB_STRINGVIEW_INIT(descriptor, sizeof(descriptor)),
+    UPB_STRINGVIEW_INIT(descriptor_src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit,
+                        sizeof(descriptor_src_proto_grpc_lookup_v1_rls_config_proto_upbdefinit)),
 };

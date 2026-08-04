@@ -27,6 +27,7 @@ _WELL_KNOWN_PROTOS_BASE = [
     "duration_proto",
     "empty_proto",
     "field_mask_proto",
+    "json_enumvalue_options_proto",
     "source_context_proto",
     "struct_proto",
     "timestamp_proto",

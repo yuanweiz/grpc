@@ -40,17 +40,20 @@ cd "$(dirname "$0")/../.."
 
 # Now that the tool is built, we can move the executable to a temporary location
 # to avoid issues with the nested bazel workspaces.
-TMP_DIR=$(mktemp -d)
-cp tools/artifact_gen/bazel-bin/gen_upb_api_from_bazel "${TMP_DIR}/"
+#TMP_DIR=$(mktemp -d)
+TMP_DIR=tmp
+cp -f tools/artifact_gen/bazel-bin/gen_upb_api_from_bazel "${TMP_DIR}/"
 # Clean bazel generated files from sub-workspace to avoid conflicts
 rm -rf tools/artifact_gen/bazel-*
 
 # Clean existing generated files
 ${TMP_DIR}/gen_upb_api_from_bazel --mode=clean $@
 
-UPB_RULES_XML=$(mktemp)
-DEPS_XML=$(mktemp)
-trap "rm -f ${UPB_RULES_XML} ${DEPS_XML}; rm -rf ${TMP_DIR}" EXIT
+#UPB_RULES_XML=$(mktemp)
+#DEPS_XML=$(mktemp)
+UPB_RULES_XML=${TMP_DIR}/upb_rules.xml
+DEPS_XML=${TMP_DIR}/deps.xml
+#trap "rm -f ${UPB_RULES_XML} ${DEPS_XML}; rm -rf ${TMP_DIR}" EXIT
 
 # Query for upb rules from the main grpc workspace. This must be run from the root.
 tools/bazel query --output xml --noimplicit_deps //:all > "${UPB_RULES_XML}"
@@ -59,6 +62,10 @@ tools/bazel query --output xml --noimplicit_deps //:all > "${UPB_RULES_XML}"
 DEPS_LIST=$(${TMP_DIR}/gen_upb_api_from_bazel \
               --mode=list_deps \
               --upb_rules_xml="${UPB_RULES_XML}")
+
+DEPS_LIST="${DEPS_LIST} @com_google_protobuf//:json_enumvalue_options_proto"
+
+echo "${DEPS_LIST}" > ${TMP_DIR}/deps_list.txt
 
 # Query for all the dependencies of the upb rules. This must be run from the root.
 if [[ -n "${DEPS_LIST}" ]]; then

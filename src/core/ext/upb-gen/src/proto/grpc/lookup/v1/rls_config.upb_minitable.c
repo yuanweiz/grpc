@@ -32,7 +32,7 @@ const upb_MiniTable grpc__lookup__v1__NameMatcher_msg_init = {
   "grpc.lookup.v1.NameMatcher",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x002000003f000012, &upb_DecodeFast_String_Repeated_Tag1Byte},
     {0x000800003f000018, &upb_DecodeFast_Bool_Scalar_Tag1Byte},
@@ -59,10 +59,16 @@ static const grpc__lookup__v1__GrpcKeyBuilder_msg_init_Fields grpc_lookup_v1_Grp
 
 const upb_MiniTable grpc__lookup__v1__GrpcKeyBuilder_msg_init = {
   &grpc_lookup_v1_GrpcKeyBuilder__fields.fields[0],
-  UPB_SIZE(32, 48), 4, kUpb_ExtMode_NonExtendable, 4, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(32, 48), 4, kUpb_ExtMode_NonExtendable, 4, UPB_FASTTABLE_MASK(24), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.lookup.v1.GrpcKeyBuilder",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x001000003f06000a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x001800003f070012, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x002000000008001a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
 typedef struct {
@@ -81,10 +87,10 @@ const upb_MiniTable grpc__lookup__v1__GrpcKeyBuilder__Name_msg_init = {
   "grpc.lookup.v1.GrpcKeyBuilder.Name",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x001800003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -105,7 +111,7 @@ const upb_MiniTable grpc__lookup__v1__GrpcKeyBuilder__ExtraKeys_msg_init = {
   "grpc.lookup.v1.GrpcKeyBuilder.ExtraKeys",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
     {0x000800003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x001800003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
     {0x002800003f00001a, &upb_DecodeFast_String_Scalar_Tag1Byte},
@@ -123,16 +129,10 @@ static const grpc__lookup__v1__GrpcKeyBuilder__ConstantKeysEntry_msg_init_Fields
 
 const upb_MiniTable grpc__lookup__v1__GrpcKeyBuilder__ConstantKeysEntry_msg_init = {
   &grpc_lookup_v1_GrpcKeyBuilder_ConstantKeysEntry__fields.fields[0],
-  48, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
+  48, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.lookup.v1.GrpcKeyBuilder.ConstantKeysEntry",
 #endif
-  UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x002000003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-  })
 };
 
 typedef struct {
@@ -155,7 +155,7 @@ static const grpc__lookup__v1__HttpKeyBuilder_msg_init_Fields grpc_lookup_v1_Htt
 
 const upb_MiniTable grpc__lookup__v1__HttpKeyBuilder_msg_init = {
   &grpc_lookup_v1_HttpKeyBuilder__fields.fields[0],
-  UPB_SIZE(32, 48), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(24), 0,
+  UPB_SIZE(32, 48), 5, kUpb_ExtMode_NonExtendable, 5, UPB_FASTTABLE_MASK(56), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.lookup.v1.HttpKeyBuilder",
 #endif
@@ -163,6 +163,10 @@ const upb_MiniTable grpc__lookup__v1__HttpKeyBuilder_msg_init = {
     {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
     {0x000800003f00000a, &upb_DecodeFast_String_Repeated_Tag1Byte},
     {0x001000003f000012, &upb_DecodeFast_String_Repeated_Tag1Byte},
+    {0x001800003f08001a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x002000003f090022, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
     {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
   })
 };
@@ -178,16 +182,10 @@ static const grpc__lookup__v1__HttpKeyBuilder__ConstantKeysEntry_msg_init_Fields
 
 const upb_MiniTable grpc__lookup__v1__HttpKeyBuilder__ConstantKeysEntry_msg_init = {
   &grpc_lookup_v1_HttpKeyBuilder_ConstantKeysEntry__fields.fields[0],
-  48, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(24), 0,
+  48, 2, kUpb_ExtMode_NonExtendable, 2, UPB_FASTTABLE_MASK(255), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.lookup.v1.HttpKeyBuilder.ConstantKeysEntry",
 #endif
-  UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x001000003f00000a, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x002000003f000012, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-  })
 };
 
 typedef struct {
@@ -221,22 +219,22 @@ const upb_MiniTable grpc__lookup__v1__RouteLookupConfig_msg_init = {
   "grpc.lookup.v1.RouteLookupConfig",
 #endif
   UPB_FASTTABLE_INIT({
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x003000003f0e000a, &upb_DecodeFast_Message_Repeated_Tag1Byte},
+    {0x003800003f0f0012, &upb_DecodeFast_Message_Repeated_Tag1Byte},
     {0x001000003f00001a, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0040000000100022, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x004800000111002a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+    {0x0050000002120032, &upb_DecodeFast_Message_Scalar_Tag1Byte},
     {0x005800003f000038, &upb_DecodeFast_Varint64_Scalar_Tag1Byte},
     {0x006000003f000042, &upb_DecodeFast_String_Repeated_Tag1Byte},
     {0x002000003f00004a, &upb_DecodeFast_String_Scalar_Tag1Byte},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
-    {0x0000000000000000, &_upb_FastDecoder_DecodeGeneric},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
   })
 };
 
@@ -254,13 +252,17 @@ static const grpc__lookup__v1__RouteLookupClusterSpecifier_msg_init_Fields grpc_
 
 const upb_MiniTable grpc__lookup__v1__RouteLookupClusterSpecifier_msg_init = {
   &grpc_lookup_v1_RouteLookupClusterSpecifier__fields.fields[0],
-  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(255), 0,
+  UPB_SIZE(16, 24), 1, kUpb_ExtMode_NonExtendable, 1, UPB_FASTTABLE_MASK(8), 0,
 #ifdef UPB_TRACING_ENABLED
   "grpc.lookup.v1.RouteLookupClusterSpecifier",
 #endif
+  UPB_FASTTABLE_INIT({
+    {0x0000000000000000, &_upb_FastDecoder_DecodeUnknown},
+    {0x001000000002000a, &upb_DecodeFast_Message_Scalar_Tag1Byte},
+  })
 };
 
-static const upb_MiniTable *messages_layout[9] = {
+static const upb_MiniTable *messages_layout_src_proto_grpc_lookup_v1_rls_config_proto_upb_file_layout[9] = {
   &grpc__lookup__v1__NameMatcher_msg_init,
   &grpc__lookup__v1__GrpcKeyBuilder_msg_init,
   &grpc__lookup__v1__GrpcKeyBuilder__Name_msg_init,
@@ -273,7 +275,7 @@ static const upb_MiniTable *messages_layout[9] = {
 };
 
 const upb_MiniTableFile src_proto_grpc_lookup_v1_rls_config_proto_upb_file_layout = {
-  messages_layout,
+  messages_layout_src_proto_grpc_lookup_v1_rls_config_proto_upb_file_layout,
   NULL,
   NULL,
   9,
