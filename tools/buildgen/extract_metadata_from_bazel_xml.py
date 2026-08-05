@@ -432,6 +432,8 @@ def _external_dep_name_from_bazel_dependency(bazel_dep: str) -> Optional[str]:
         # special case for add dependency on one of the absl libraries (there is not just one absl library)
         prefixlen = len("@com_google_absl//")
         return bazel_dep[prefixlen:]
+    elif bazel_dep.startswith("@com_google_protobuf//upb"):
+        return "upb"
     elif bazel_dep == "@com_github_google_benchmark//:benchmark":
         return "benchmark"
     elif bazel_dep == "@boringssl//:ssl":
@@ -1219,66 +1221,6 @@ _BUILD_EXTRA_METADATA = {
         "language": "c",
         "build": "all",
         "_RENAME": "address_sorting",
-    },
-    "@com_google_protobuf//upb/base": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_base_lib",
-    },
-    "@com_google_protobuf//upb/hash:hash": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_hash_lib",
-    },
-    "@com_google_protobuf//upb/mem": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_mem_lib",
-    },
-    "@com_google_protobuf//upb/lex:lex": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_lex_lib",
-    },
-    "@com_google_protobuf//upb/message": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_message_lib",
-    },
-    "@com_google_protobuf//upb/json:json": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_json_lib",
-    },
-    "@com_google_protobuf//upb/mini_descriptor:mini_descriptor": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_mini_descriptor_lib",
-    },
-    "@com_google_protobuf//upb/mini_table:mini_table": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_mini_table_lib",
-    },
-    "@com_google_protobuf//upb/reflection:descriptor_upb_proto": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_descriptor_lib",
-    },
-    "@com_google_protobuf//upb/reflection:reflection": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_reflection_lib",
-    },
-    "@com_google_protobuf//upb/text:text": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_textformat_lib",
-    },
-    "@com_google_protobuf//upb/wire:wire": {
-        "language": "c",
-        "build": "all",
-        "_RENAME": "upb_wire_lib",
     },
     "@com_google_protobuf//third_party/utf8_range:utf8_range": {
         "language": "c",
