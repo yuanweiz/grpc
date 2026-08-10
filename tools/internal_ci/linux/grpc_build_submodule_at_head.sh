@@ -31,7 +31,7 @@ SUBMODULE_BRANCH_NAME="${BAZEL_FLAGS:-master}"
 
 # Update submodule to be tested at HEAD
 # (cd "third_party/${SUBMODULE_NAME}" && git fetch origin && git checkout "origin/${SUBMODULE_BRANCH_NAME}")
-(cd "third_party/${SUBMODULE_NAME}" && git fetch origin --all --tags && git checkout "v36.0-rc2" )
+(cd "third_party/${SUBMODULE_NAME}" && git fetch origin --tags && git checkout "v36.0-rc2" )
 
 echo "This suite tests whether gRPC HEAD builds with HEAD of submodule '${SUBMODULE_NAME}'"
 echo "If a test breaks, either"
