@@ -4,6 +4,11 @@
 
 This document describes how to build custom `rake-compiler-dock` Docker images for gRPC, based on the upstream [rake-compiler-dock repository](https://github.com/rake-compiler/rake-compiler-dock).
 
+### Naming Convention
+To prevent name collisions in the registry:
+- **Base Images:** Prefixed with `rake_base_` (e.g. `rake_base_<arch>`, defined in `third_party/rake-compiler-dock/base-images/`).
+- **Overlay Images:** Prefixed with `rake_` (e.g. `rake_<arch>`, defined in `third_party/rake-compiler-dock/`).
+
 ## Prerequisites
 
 Set up the required environment variables:
