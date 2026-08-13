@@ -60,7 +60,7 @@ copy_dockerfiles() {
   local docker_dir="${GEM_ROOT}/tmp/docker"
   for arch in "${ARCHS[@]}"; do
     local src="${docker_dir}/Dockerfile.mri.${arch}"
-    local dst="${BASE_IMAGE_DIR}/rake_${arch}"
+    local dst="${BASE_IMAGE_DIR}/rake_base_${arch}"
     mkdir -p "$dst"
     cp "$src" "$dst/Dockerfile"
   done
@@ -74,7 +74,7 @@ copy_build_folder() {
 rewrite_base_images_references() {
   for arch in "${ARCHS[@]}"; do
     local current_version
-    current_version=$(cat "${BASE_IMAGE_DIR}/rake_${arch}.current_version")
+    current_version=$(cat "${BASE_IMAGE_DIR}/rake_base_${arch}.current_version")
     sed -E -i "s|^FROM [^ ]+\$|FROM ${current_version}|" "${IMAGE_DIR}/rake_${arch}/Dockerfile"
   done
 }
