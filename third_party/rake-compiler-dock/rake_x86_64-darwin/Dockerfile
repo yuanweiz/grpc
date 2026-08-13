@@ -1,1 +1,1 @@
-FROM us-docker.pkg.dev/grpc-testing/testing-images-public/rake_x86_64-darwin:48a25bfae6dd2de6967fc0ab3fed47c94c27ab59@sha256:0f37e2c155559e7434e92637b60563fed8bc4ee6bca3823d4812f467caf366bc
+FROM us-docker.pkg.dev/grpc-testing/testing-images-public/rake_base_x86_64-darwin:48a25bfae6dd2de6967fc0ab3fed47c94c27ab59@sha256:dec85ed88ad467ea81fd5cc478728bf716bd44dd2e4e99ab9e4dfd24e8b80de9

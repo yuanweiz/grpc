@@ -1,4 +1,4 @@
-FROM us-docker.pkg.dev/grpc-testing/testing-images-public/rake_x86_64-linux-gnu:41e86e72447b4c4dec07c6c547c160e4be7bb83a@sha256:321891a86015a8a944a2173f04523746eb34f531cee38f7f135b55e2d3ee6afe
+FROM us-docker.pkg.dev/grpc-testing/testing-images-public/rake_base_x86_64-linux-gnu:41e86e72447b4c4dec07c6c547c160e4be7bb83a@sha256:a79f970b16073f36b6dcfde4d465c8e5cb2c91244fd8774394aae5170cb33537
 
 #=================
 # Install ccache
