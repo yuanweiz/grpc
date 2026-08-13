@@ -247,15 +247,22 @@ process_dockerfile() {
   # - one to exclude it from the GCP Vulnerability Scanner
   local docker_exit_code=0
 
-  # Copy the dockerfile to a build context that has all the needed files.
+  # Create a unique build context directory for this parallel build to prevent race conditions.
+  local local_build_dir
+  local_build_dir=$(mktemp -d)
+  trap 'rm -rf "${local_build_dir}"' EXIT
+
+  cp -a "${DOCKER_BUILD_DIR}/." "${local_build_dir}"
+
+  # Copy the dockerfile to the build context.
   local docker_file="${DOCKERFILE_DIR}/Dockerfile"
-  cp -f "$docker_file" "$DOCKER_BUILD_DIR"
+  cp -f "$docker_file" "${local_build_dir}"
 
   docker build \
     ${ALWAYS_BUILD:+--no-cache --pull} \
     -t ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:${DOCKER_IMAGE_TAG} \
     -t ${ARTIFACT_REGISTRY_PREFIX}/${DOCKER_IMAGE_NAME}:infrastructure-public-image-${DOCKER_IMAGE_TAG} \
-    ${DOCKER_BUILD_DIR} || docker_exit_code=$?
+    "${local_build_dir}" || docker_exit_code=$?
   if [ "${docker_exit_code}" -ne 0 ]; then
     if [ -z "${KEEP_GOING}" ]; then
       touch "${FAILED_DIR}/STOP"
