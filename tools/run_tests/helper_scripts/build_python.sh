@@ -145,7 +145,6 @@ pip_install() {
 pip_install --upgrade pip
 pip_install --upgrade wheel
 pip_install --upgrade setuptools==77.0.1
-pip_install --upgrade PyYAML
 
 # pip-installs the directory specified. Used because on MSYS the vanilla Windows
 # Python gets confused when parsing paths.
@@ -168,7 +167,8 @@ pip_install_dir_and_deps() {
 pip_install -U gevent
 
 pip_install --upgrade 'cython==3.1.1'
-pip_install --upgrade six 'protobuf>=7.35.1,<8.0.0'
+pip_install --upgrade PyYAML
+pip_install --upgrade 'protobuf>=7.35.1,<8.0.0'
 
 if [ "$("$VENV_PYTHON" -c "import sys; print(sys.version_info[0])")" == "2" ]
 then
