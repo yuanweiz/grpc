@@ -15,19 +15,19 @@ The term "bazel 9 support" can refer to two different contexts:
 1. Use Bazel 9 to build gRPC from the source tree root. This is typically used in gRPC's own CI environment and/or when users download gRPC source code for compilation.
 2. Use Bazel 9 to add gRPC as a dependency module into a user's project. This is typically done by adding a `bazel_dep()` line to the `MODULE.bazel` file, which downloads the source code from the Bazel Central Registry (BCR).
 
-I propose a gradual approach starting with 1), which enables Bazel 9 support in our own CI system, and then extending support to 2), i.e., end users. This is because the second problem is harder and more nuanced due to a combination of factors; more discussion is covered in the [Challenges](#challenges) section.
+The second scenario is harder due to transitive dependency requirements, detailed in the [Design](#design) section.
 
 ## Major Changes in Bazel 9
 
-The following section highlights several backward incompatible changes in Bazel 9. See also https://blog.bazel.build/2026/01/20/bazel-9.html.
+Key backward-incompatible changes in Bazel 9 (see the [Bazel 9 LTS announcement](https://blog.bazel.build/2026/01/20/bazel-9.html)) include:
 
 ### Mandatory Bazelmod and Deprecation of WORKSPACE
 
-Bazel 9 is the first LTS version which mandates the use of bazelmod, the new module and package management system. The new module system replaces the legacy WORKSPACE mechanism, but also introduces certain new challenges (see [Challenges](#challenges) section).
+Bazel 9 is the first LTS version which mandates the use of bazelmod, the new module and package management system. The new module system replaces the legacy WORKSPACE mechanism, but also introduces certain new challenges (see [Design](#design) section).
 
 ### Starlarkification
 
-The Bazel team demoted certain language rules (e.g., `(cc|java|py)_binary`) from Bazel built-ins to user-space Starlark implementations. Because these rules are no longer built-in, BUILD files must explicitly `load` them from their respective rulesets (such as `@rules_cc`, `@rules_java`, or `@rules_python`).
+Language rules (e.g., `(cc|java|py)_binary`) have been moved from built-ins to user-space Starlark. BUILD files must now explicitly `load` them from rulesets like `@rules_cc`, `@rules_java`, or `@rules_python`.
 
 ### Deprecation of incompatible flags
 
@@ -35,21 +35,36 @@ Certain incompatible flags have been removed (see the [Bazel 9 LTS announcement]
 
 ### (Only in 9.0) compatibility_level
 
-`compatibility_level` is Bazel's own abstraction layer that models the major version number in Semantic Versioning (SemVer). It can lead to unsatisfiable version requirements and has been removed in 9.1 and 8.6, respectively (see the [Bazel FAQ](https://bazel.build/versions/9.1.0/external/faq#what-is-a-compatibility-level)). This loosens the constraints during version resolution and makes migration much easier; hence, we should target Bazel >= 9.1.
+`compatibility_level` modeled major SemVer versions but often caused unsatisfiable version requirements. It was removed in Bazel 9.1 and 8.6 (see [Bazel FAQ](https://bazel.build/versions/9.1.0/external/faq#what-is-a-compatibility-level)). Removing it loosens resolution constraints and simplifies migration; hence, we should target Bazel >= 9.1.
 
-## Design
+## Design {#design}
 
-### Challenges {#challenges}
+### Phased Approach
 
 Empirically, the main challenge of this task arises from a combination of factors:
 
-* Some of our dependencies do not support Bazel 9.
-* Bazel can select a version different from what we declare in `MODULE.bazel`, making patching difficult since a patch applies to a specific version of a dependency (this is by design; see the [Appendix](#version-management)).
+* Some of our dependencies do not support Bazel 9. See this [example](#opt1).
+* Bazel version selection can be different from what we declare in `MODULE.bazel`, making patching difficult or impossible. (see also [Appendix](#version-management)).
 * The Bazel build needs to be consistent with other build systems (CMake, Python autotools, Ruby rake, etc.), meaning that if we must upgrade a dependency, we have to do so atomically across all build configurations.
 
-As a result, we need to handle each dependency on a case-by-case basis. There are several imperfect solutions—such as patching or upgrading—which all come with different problems. This section explains their respective pros and cons.
+To address these, we propose a phased approach:
 
-#### Option 1: Upgrade package to a (major) version that supports Bazel 9
+- **Phase 0**: Add a warning in `WORKSPACE` that workspace support will be dropped soon.
+- **Phase 1**: Adopt Bazel 9 internally (for gRPC developers and CI environment):
+  1. Rewrite gRPC's own `BUILD` and `.bzl` files.
+  2. For transitive dependencies, pin package versions and maintain Bazel 9 compatibility patches.
+- **Phase 2**: Enable compatibility with newer, Bazel 9-compatible dependencies:
+  1. Add a Bazel-only build test that intentionally overrides dependency versions to force newer releases.
+- **Phase 3**: Gradually upgrade dependencies to newer versions that natively support Bazel 9:
+  1. Remove the temporary version overrides introduced in Phase 2.
+  2. Ensure tests and builds pass across other supported build systems.
+- **Phase 4**: Once all dependencies are upgraded, publish the gRPC module to the BCR.
+
+### Strategies for Upgrading Dependencies {#strats}
+
+We need to handle each dependency on a case-by-case basis. Bazel offers several solutions—such as patching or upgrading—which all come with different shortcomings.
+
+#### Option 1: Upgrade package to a version that supports Bazel 9 #{opt1}
 
 Pros:
 
@@ -84,24 +99,22 @@ Pros:
 
 Cons:
 
-* May block on code review.
+* May block on BCR code review.
 * Very situational. If Bazel chooses a different version, our work becomes a no-op. This approach only works with packages that are archived or do not require frequent upgrades.
-
-### Phased Approach
-
-Due to the challenges mentioned above, a phased approach is proposed:
-
-- **Phase 0**: Add a warning in `WORKSPACE` that users use it at their own risk.
-- **Phase 1**: Use Bazel 9 as the default version for development and CI environments. This step leverages automatic refactoring tools to patch selected versions of dependencies in our own source tree only.
-- **Phase 2**: Make sure gRPC is buildable with Bazel 9 and a curated set of package versions. This requires an out-of-tree build test with `bazel_dep()` instructions that forces Bazel to choose higher versions.
-- **Phase 3**: Gradually upgrade dependencies to newer versions that support Bazel 9, and remove the version overrides during Phase 3.
-- **Phase 4**: Once all dependencies are upgraded, publish the gRPC module to the BCR.
 
 ## Appendix: Overview of Bazel Version Management {#version-management}
 
-Bazel's package manager uses the Minimal Version Selection (MVS) algorithm (https://bazel.build/external/module#version-selection). In our own environment, most of the major dependencies are pinned to a specific version, and the resolved graph will be largely predictable. In a user environment, however, some other package (invisible to gRPC) can specify a dependency on a newer version, transitively causing Bazel to bump up the final chosen version.
+Bazel uses [Minimal Version Selection (MVS)](https://bazel.build/external/module#version-selection) to resolve dependencies. Version pinning can keep our CI environment predictable, but downstream user projects may pull in newer transitive versions of the same dependencies.
 
-To mitigate this problem, Bazel allows overriding the version resolution decision, but only in the root module (using `*_override` primitives).
+> Bazel uses the Minimal Version Selection (MVS) algorithm introduced in the Go module system. MVS assumes that all new versions of a module are backwards compatible, and so picks the highest version specified by any dependent.
+
+To [override](https://bazel.build/external/module#overrides) resolution decisions, users must define `*_override` directives—but these are **only respected in the root module**, not in dependencies like gRPC.
+
+> Specify overrides in the MODULE.bazel file to alter the behavior of Bazel module resolution. Only the root module’s overrides take effect — if a module is used as a dependency, its overrides are ignored.
+> 
+> Each override is specified for a certain module name, affecting all of its versions in the dependency graph. Although only the root module’s overrides take effect, they can be for transitive dependencies that the root module does not directly depend on.
+
+
 
 ## References
 
@@ -109,6 +122,4 @@ To mitigate this problem, Bazel allows overriding the version resolution decisio
 * Bazel release notes https://github.com/bazelbuild/bazel/releases
 * https://github.com/google/oss-policies-info/blob/main/foundational-cxx-support-matrix.md
 * [KT: Bazelmod](https://docs.google.com/document/d/1zXCp7evG7AhyO2ndICYiPtG4otHPd7AjjSr-GwgwrKs/edit?resourcekey=0-FJLhEvtGT_0CwQZ2eI9q0w&tab=t.0#heading=h.gzx116ekt8hx)
-* gRPC Migration to Bazel Module [go/grpc-bzlmod-migration](http://go/grpc-bzlmod-migration) 
-
-
+* gRPC Migration to Bazel Module [go/grpc-bzlmod-migration](http://go/grpc-bzlmod-migration)
