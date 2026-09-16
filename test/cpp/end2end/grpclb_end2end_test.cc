@@ -471,7 +471,7 @@ class GrpclbEnd2endTest : public ::testing::Test {
     void Serve(grpc_core::Mutex* mu, grpc_core::CondVar* cond) {
       // We need to acquire the lock here in order to prevent the notify_one
       // below from firing before its corresponding wait is executed.
-      grpc_core::MutexLock lock(mu);
+      grpc_core::MutexLock lock(*mu);
       ServerBuilder builder;
       std::shared_ptr<ServerCredentials> creds(new SecureServerCredentials(
           grpc_fake_transport_security_server_credentials_create()));

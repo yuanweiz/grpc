@@ -210,7 +210,7 @@ void XdsEnd2endTest::ServerThread::Serve(grpc_core::Mutex* mu,
                                          grpc_core::CondVar* cond) {
   // We need to acquire the lock here in order to prevent the notify_one
   // below from firing before its corresponding wait is executed.
-  grpc_core::MutexLock lock(mu);
+  grpc_core::MutexLock lock(*mu);
   std::string server_address = grpc_core::LocalIpAndPort(port_);
   if (use_xds_enabled_server_) {
     XdsServerBuilder builder;

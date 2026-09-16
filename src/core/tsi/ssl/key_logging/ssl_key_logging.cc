@@ -66,7 +66,7 @@ TlsSessionKeyLoggerCache::TlsSessionKeyLogger::~TlsSessionKeyLogger() {
     if (fd_ != nullptr) fclose(fd_);
   }
   {
-    grpc_core::MutexLock lock(g_tls_session_key_log_cache_mu);
+    grpc_core::MutexLock lock(*g_tls_session_key_log_cache_mu);
     auto it = cache_->tls_session_key_logger_map_.find(
         tls_session_key_log_file_path_);
     if (it != cache_->tls_session_key_logger_map_.end() && it->second == this) {
@@ -101,7 +101,7 @@ TlsSessionKeyLoggerCache::TlsSessionKeyLoggerCache()
 }
 
 TlsSessionKeyLoggerCache::~TlsSessionKeyLoggerCache() {
-  grpc_core::MutexLock lock(g_tls_session_key_log_cache_mu);
+  grpc_core::MutexLock lock(*g_tls_session_key_log_cache_mu);
   g_cache_instance = nullptr;
 }
 
@@ -113,7 +113,7 @@ grpc_core::RefCountedPtr<TlsSessionKeyLogger> TlsSessionKeyLoggerCache::Get(
     return nullptr;
   }
   {
-    grpc_core::MutexLock lock(g_tls_session_key_log_cache_mu);
+    grpc_core::MutexLock lock(*g_tls_session_key_log_cache_mu);
     grpc_core::RefCountedPtr<TlsSessionKeyLoggerCache> cache;
     if (g_cache_instance == nullptr) {
       // This will automatically set g_cache_instance.

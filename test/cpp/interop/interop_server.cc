@@ -321,7 +321,7 @@ class TestServiceImpl : public TestService::Service {
       if (request.has_orca_oob_report()) {
         if (orca_oob_lock == nullptr) {
           orca_oob_lock =
-              std::make_unique<grpc_core::MutexLock>(&orca_oob_server_mu_);
+              std::make_unique<grpc_core::MutexLock>(orca_oob_server_mu_);
           server_metric_recorder_->ClearCpuUtilization();
           server_metric_recorder_->ClearEps();
           server_metric_recorder_->ClearMemoryUtilization();

@@ -106,7 +106,7 @@ struct CallbackAlternativeCQ {
   }
 
   void Unref() {
-    grpc_core::MutexLock lock(g_callback_alternative_mu);
+    grpc_core::MutexLock lock(*g_callback_alternative_mu);
     refs--;
     if (refs == 0) {
       cq->Shutdown();

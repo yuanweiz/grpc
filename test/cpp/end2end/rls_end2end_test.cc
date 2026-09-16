@@ -448,7 +448,7 @@ class RlsEnd2endTest : public ::testing::Test {
     void Serve(grpc::internal::Mutex* mu, grpc::internal::CondVar* cond) {
       // We need to acquire the lock here in order to prevent the notify_one
       // below from firing before its corresponding wait is executed.
-      grpc::internal::MutexLock lock(mu);
+      grpc::internal::MutexLock lock(*mu);
       ServerBuilder builder;
       auto creds = std::make_shared<SecureServerCredentials>(
           grpc_fake_transport_security_server_credentials_create());

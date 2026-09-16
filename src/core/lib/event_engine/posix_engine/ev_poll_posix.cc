@@ -566,7 +566,7 @@ Poller::WorkResult PollPoller::Work(
     PollEventHandle* head = poll_handles_list_head_;
     while (head != nullptr) {
       {
-        grpc_core::MutexLock lock(head->mu());
+        grpc_core::MutexLock lock(*head->mu());
         // There shouldn't be any orphaned fds at this point. This is because
         // prior to marking a handle as orphaned it is first removed from
         // poll handle list for the poller under the poller lock.
@@ -618,7 +618,7 @@ Poller::WorkResult PollPoller::Work(
       for (i = 1; i < pfd_count; i++) {
         PollEventHandle* head = watchers[i];
         int watch_mask;
-        grpc_core::ReleasableMutexLock lock(head->mu());
+        grpc_core::ReleasableMutexLock lock(*head->mu());
         if (head->IsWatched(watch_mask)) {
           head->SetWatched(-1);
           // This fd was Watched with a watch mask > 0.
@@ -657,7 +657,7 @@ Poller::WorkResult PollPoller::Work(
       for (i = 1; i < pfd_count; i++) {
         PollEventHandle* head = watchers[i];
         int watch_mask;
-        grpc_core::ReleasableMutexLock lock(head->mu());
+        grpc_core::ReleasableMutexLock lock(*head->mu());
         if (!head->IsWatched(watch_mask) || watch_mask == 0) {
           // IsWatched will be false if an orphan was invoked on the
           // handle while it was being polled. If watch_mask is 0, then the fd

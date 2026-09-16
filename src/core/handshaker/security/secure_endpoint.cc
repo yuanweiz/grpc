@@ -698,7 +698,7 @@ static void on_read(void* user_data, grpc_error_handle error) {
   secure_endpoint* ep = reinterpret_cast<secure_endpoint*>(user_data);
 
   {
-    grpc_core::MutexLock lock(ep->frame_protector.read_mu());
+    grpc_core::MutexLock lock(*ep->frame_protector.read_mu());
     // If we were shut down after this callback was scheduled with OK
     // status but before it was invoked, we need to treat that as an error.
     if (ep->wrapped_ep == nullptr && error.ok()) {
@@ -752,7 +752,7 @@ static void endpoint_write(
   secure_endpoint* ep = reinterpret_cast<secure_endpoint*>(secure_ep);
   tsi_result result;
   {
-    grpc_core::MutexLock lock(ep->frame_protector.write_mu());
+    grpc_core::MutexLock lock(*ep->frame_protector.write_mu());
     result = ep->frame_protector.Protect(slices, args.max_frame_size());
   }
 
@@ -1054,7 +1054,7 @@ class SecureEndpoint final : public EventEngine::Endpoint,
       }
       // A small write: encrypt inline and write to the socket.
       {
-        grpc_core::MutexLock lock(frame_protector_.write_mu());
+        grpc_core::MutexLock lock(*frame_protector_.write_mu());
         result = frame_protector_.Protect(data->c_slice_buffer(),
                                           args.max_frame_size());
       }
@@ -1110,8 +1110,8 @@ class SecureEndpoint final : public EventEngine::Endpoint,
 
     void Shutdown() {
       std::unique_ptr<EventEngine::Endpoint> wrapped_ep;
-      grpc_core::MutexLock write_lock(frame_protector_.write_mu());
-      grpc_core::MutexLock read_lock(frame_protector_.read_mu());
+      grpc_core::MutexLock write_lock(*frame_protector_.write_mu());
+      grpc_core::MutexLock read_lock(*frame_protector_.read_mu());
       wrapped_ep = std::move(wrapped_ep_);
       frame_protector_.Shutdown();
       GRPC_TRACE_LOG(secure_endpoint, INFO)
@@ -1126,7 +1126,7 @@ class SecureEndpoint final : public EventEngine::Endpoint,
    private:
     bool MaybeFinishReadImmediately() {
       GRPC_LATENT_SEE_ALWAYS_ON_SCOPE("secure_endpoint maybe finish read");
-      grpc_core::MutexLock lock(frame_protector_.read_mu());
+      grpc_core::MutexLock lock(*frame_protector_.read_mu());
       // If the read is large, since we got the bytes whilst still calling read,
       // offload the decryption to event engine.
       // That way we can do the decryption off this thread (which is usually
@@ -1159,7 +1159,7 @@ class SecureEndpoint final : public EventEngine::Endpoint,
                                 absl::Status status) {
       GRPC_LATENT_SEE_ALWAYS_ON_SCOPE("secure endpoint finish async read");
       {
-        grpc_core::MutexLock lock(impl->frame_protector_.read_mu());
+        grpc_core::MutexLock lock(*impl->frame_protector_.read_mu());
         if (status.ok() && impl->wrapped_ep_ == nullptr) {
           status = absl::CancelledError("secure endpoint shutdown");
         }
@@ -1191,7 +1191,7 @@ class SecureEndpoint final : public EventEngine::Endpoint,
 
         bool had_source_data = false;
         {
-          grpc_core::MutexLock lock(frame_protector_.read_mu());
+          grpc_core::MutexLock lock(*frame_protector_.read_mu());
           if (status.ok() && wrapped_ep_ == nullptr) {
             status = absl::CancelledError("secure endpoint shutdown");
           } else {

@@ -60,7 +60,7 @@ int64_t ConnectionAttemptInjector::TcpConnect(
     grpc_closure* closure, grpc_endpoint** ep,
     grpc_pollset_set* interested_parties, const EndpointConfig& config,
     const grpc_resolved_address* addr, grpc_core::Timestamp deadline) {
-  grpc_core::MutexLock lock(g_mu);
+  grpc_core::MutexLock lock(*g_mu);
   // If there's no injector, use the original vtable.
   if (g_injector == nullptr) {
     g_original_vtable->connect(closure, ep, interested_parties, config, addr,
@@ -91,13 +91,13 @@ ConnectionAttemptInjector::ConnectionAttemptInjector() {
   // Fail if ConnectionAttemptInjector::Init() was not called after
   // grpc_init() to inject the vtable.
   GRPC_CHECK(grpc_tcp_client_impl == &kDelayedConnectVTable);
-  grpc_core::MutexLock lock(g_mu);
+  grpc_core::MutexLock lock(*g_mu);
   GRPC_CHECK_EQ(g_injector, nullptr);
   g_injector = this;
 }
 
 ConnectionAttemptInjector::~ConnectionAttemptInjector() {
-  grpc_core::MutexLock lock(g_mu);
+  grpc_core::MutexLock lock(*g_mu);
   g_injector = nullptr;
 }
 

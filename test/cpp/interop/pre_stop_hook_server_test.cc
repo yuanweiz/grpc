@@ -69,7 +69,7 @@ void ServerLoop(HookServiceImpl* service, int port, Server** server,
   builder.RegisterService(service);
   auto s = builder.BuildAndStart();
   {
-    grpc_core::MutexLock lock(mu);
+    grpc_core::MutexLock lock(*mu);
     *server = s.get();
     condition->SignalAll();
   }

@@ -86,7 +86,7 @@ inline gpr_mu* GetUnderlyingGprMu(Mutex* mutex) { return &mutex->mu_; }
 
 class ABSL_SCOPED_LOCKABLE MutexLock {
  public:
-  explicit MutexLock(Mutex* mu) ABSL_EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(mu) {
+  explicit MutexLock(Mutex& mu) ABSL_EXCLUSIVE_LOCK_FUNCTION(mu) : mu_(&mu) {
     mu_->lock();
   }
   ~MutexLock() ABSL_UNLOCK_FUNCTION() { mu_->unlock(); }
@@ -100,8 +100,8 @@ class ABSL_SCOPED_LOCKABLE MutexLock {
 
 class ABSL_SCOPED_LOCKABLE ReleasableMutexLock {
  public:
-  explicit ReleasableMutexLock(Mutex* mu) ABSL_EXCLUSIVE_LOCK_FUNCTION(mu)
-      : mu_(mu) {
+  explicit ReleasableMutexLock(Mutex& mu) ABSL_EXCLUSIVE_LOCK_FUNCTION(mu)
+      : mu_(&mu) {
     mu_->lock();
   }
   ~ReleasableMutexLock() ABSL_UNLOCK_FUNCTION() {
@@ -163,9 +163,9 @@ class MutexLockForGprMu {
 // Deprecated. Prefer MutexLock or ReleasableMutexLock
 class ABSL_SCOPED_LOCKABLE LockableAndReleasableMutexLock {
  public:
-  explicit LockableAndReleasableMutexLock(Mutex* mu)
+  explicit LockableAndReleasableMutexLock(Mutex& mu)
       ABSL_EXCLUSIVE_LOCK_FUNCTION(mu)
-      : mu_(mu) {
+      : mu_(&mu) {
     mu_->lock();
   }
   ~LockableAndReleasableMutexLock() ABSL_UNLOCK_FUNCTION() {

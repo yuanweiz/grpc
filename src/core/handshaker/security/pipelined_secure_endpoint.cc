@@ -639,7 +639,7 @@ class PipelinedSecureEndpoint final : public EventEngine::Endpoint {
       tsi_result result;
       frame_protector_.TraceOp("Write", data->c_slice_buffer());
       {
-        grpc_core::MutexLock lock(frame_protector_.write_mu());
+        grpc_core::MutexLock lock(*frame_protector_.write_mu());
         result = frame_protector_.Protect(data->c_slice_buffer(),
                                           args.max_frame_size());
       }
@@ -677,8 +677,8 @@ class PipelinedSecureEndpoint final : public EventEngine::Endpoint {
 
     void Shutdown() {
       std::unique_ptr<EventEngine::Endpoint> wrapped_ep;
-      grpc_core::MutexLock write_lock(frame_protector_.write_mu());
-      grpc_core::MutexLock read_lock(frame_protector_.read_mu());
+      grpc_core::MutexLock write_lock(*frame_protector_.write_mu());
+      grpc_core::MutexLock read_lock(*frame_protector_.read_mu());
       grpc_core::MutexLock shutdown_read_lock(shutdown_read_mu_);
       wrapped_ep = std::move(wrapped_ep_);
       frame_protector_.Shutdown();
