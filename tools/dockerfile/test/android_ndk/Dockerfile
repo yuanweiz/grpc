@@ -12,7 +12,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-FROM debian:13
+FROM debian:12
 
 #=================
 # Basic C core dependencies
@@ -99,7 +99,7 @@ RUN mkdir /var/local/jenkins
 RUN apt update && apt upgrade -y
 
 # Java
-RUN apt-get install -y openjdk-21-jdk
+RUN apt-get install -y openjdk-17-jdk
 
 # Install Android SDK
 ENV ANDROID_HOME /opt/android-sdk
@@ -107,7 +107,6 @@ RUN mkdir -p $ANDROID_HOME && \
     wget -O cmd.zip https://dl.google.com/android/repository/commandlinetools-linux-9477386_latest.zip && \
     unzip cmd.zip && rm cmd.zip && \
     yes | ./cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_HOME --licenses && \
-    ./cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_HOME 'tools' && \
     ./cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_HOME 'build-tools;30.0.2' && \
     ./cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_HOME 'platforms;android-26' && \
     ./cmdline-tools/bin/sdkmanager --sdk_root=$ANDROID_HOME 'ndk;25.1.8937393' && \
