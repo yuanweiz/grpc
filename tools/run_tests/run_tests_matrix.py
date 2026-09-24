@@ -605,7 +605,7 @@ if __name__ == "__main__":
         ):
             if not any(
                 exclude_label in job.labels for exclude_label in args.exclude
-            ):
+            ) and "clang19" in job.shortname:
                 jobs.append(job)
 
     if not jobs:
