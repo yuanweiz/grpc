@@ -23,6 +23,7 @@ cd $(dirname $0)/../../..
 source tools/internal_ci/helper_scripts/prepare_build_linux_rc
 
 # Run setup script in docker.
+env SUBMODULE_BRANCH_NAME=37.x \
 docker \
   run \
   --rm \
